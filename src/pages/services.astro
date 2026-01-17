@@ -1,141 +1,170 @@
-<main class="page">
-  <header class="hero">
-    <h1>Services</h1>
-    <p>
-      Fast, clean, affordable print & sign work for small businesses, nonprofits, and the public.
-      Email us what you need (size, quantity, deadline) and we’ll quote it.
-    </p>
-  </header>
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
 
-  <section class="grid" aria-label="Services list">
-    <article class="card">
-      <h3>Business Cards</h3>
-      <p>Professional cards that help you look legit and close.</p>
-    </article>
+const PAGE_TITLE = `Services | ${SITE_TITLE}`;
+const PAGE_DESC =
+  'Business cards, yard signs, banners, window perf, stickers/vinyl, sublimation, and button formats.';
+---
 
-    <article class="card">
-      <h3>Yard Signs</h3>
-      <p>Bold, readable signs for promotions, events, and campaigns.</p>
-    </article>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={PAGE_TITLE} description={PAGE_DESC} />
+  </head>
 
-    <article class="card">
-      <h3>Banners</h3>
-      <p>Durable banners for storefronts, grand openings, and sales.</p>
-    </article>
+  <body>
+    <Header />
 
-    <article class="card">
-      <h3>Window Perf</h3>
-      <p>Storefront graphics that look great and still let light in.</p>
-    </article>
+    <main class="page">
+      <header class="hero">
+        <h1>Services</h1>
+        <p>
+          Fast, clean, affordable print and sign work for small businesses, nonprofits, and the public.
+          Email us what you need (size, quantity, deadline) and we’ll quote it.
+        </p>
+      </header>
 
-    <article class="card">
-      <h3>Stickers / Vinyl</h3>
-      <p>Decals, labels, and vinyl graphics for branding and info.</p>
-    </article>
+      <section class="grid" aria-label="Services list">
+        <article class="card">
+          <h3>Business Cards</h3>
+          <p>Professional cards that help you look legit and close.</p>
+        </article>
 
-    <article class="card">
-      <h3>Sublimation</h3>
-      <p>Cups, tumblers, towels, license plates, and more — custom printed fast.</p>
-    </article>
-  </section>
-   <article class="card">
-      <h3>Buttons Formats</h3>
-      <p>Buttons, magnets, spinners, keychains, mirrors, and mirrored keychains —
-      great for promos, giveaways, and merch.
-      </p>
-   </article>
+        <article class="card">
+          <h3>Yard Signs</h3>
+          <p>Bold, readable signs for promotions, events, and campaigns.</p>
+        </article>
 
+        <article class="card">
+          <h3>Banners</h3>
+          <p>Durable banners for storefronts, grand openings, and sales.</p>
+        </article>
 
-  <section class="cta" aria-label="Get a quote">
-    <a class="btn primary" href="/contact/">Get a quick quote</a>
-    <a class="btn" href="https://www.facebook.com/JustNeedsDone" target="_blank" rel="noopener noreferrer">
-      Message us on Facebook
-    </a>
-  </section>
-</main>
+        <article class="card">
+          <h3>Window Perf</h3>
+          <p>Storefront graphics that look great and still let light in.</p>
+        </article>
 
-<style>
-  .page {
-    padding: 3rem 1.25rem 4rem;
-  }
+        <article class="card">
+          <h3>Stickers / Vinyl</h3>
+          <p>Decals, labels, and vinyl graphics for branding and info.</p>
+        </article>
 
-  .hero {
-    max-width: 880px;
-    margin: 0 auto 2rem;
-    text-align: center;
-  }
+        <article class="card">
+          <h3>Sublimation</h3>
+          <p>Cups, tumblers, towels, license plates, and more — custom printed fast.</p>
+        </article>
 
-  .hero h1 {
-    font-size: clamp(2.25rem, 4vw, 3.25rem);
-    line-height: 1.1;
-    margin: 0 0 0.75rem;
-  }
+        <article class="card wide">
+          <h3>Button Formats</h3>
+          <p>
+            Buttons, magnets, spinners, keychains, mirrors, mirrored keychains — great for promos,
+            giveaways, and merch.
+          </p>
+        </article>
+      </section>
 
-  .hero p {
-    margin: 0 auto;
-    max-width: 720px;
-    line-height: 1.6;
-  }
+      <section class="cta" aria-label="Get a quote">
+        <a class="btn primary" href="/contact/">Get a quick quote</a>
+        <a class="btn" href="https://www.facebook.com/JustNeedsDone" target="_blank" rel="noopener noreferrer">
+          Message us on Facebook
+        </a>
+      </section>
+    </main>
 
-  .grid {
-    max-width: 980px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
+    <Footer />
 
-  @media (max-width: 900px) {
-    .grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
+    <style>
+      .page {
+        padding: 3rem 1.25rem 4rem;
+      }
 
-  @media (max-width: 600px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
+      .hero {
+        max-width: 880px;
+        margin: 0 auto 2rem;
+        text-align: center;
+      }
 
-  .card {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 14px;
-    padding: 1.25rem 1.25rem 1.1rem;
-    background: #fff;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-  }
+      .hero h1 {
+        font-size: clamp(2.25rem, 4vw, 3.25rem);
+        line-height: 1.1;
+        margin: 0 0 0.75rem;
+      }
 
-  .card h3 {
-    margin: 0 0 0.65rem;
-    line-height: 1.05;
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
-    overflow-wrap: anywhere; /* prevents any weird spillover */
-  }
+      .hero p {
+        margin: 0 auto;
+        max-width: 720px;
+        line-height: 1.6;
+      }
 
-  .card p {
-    margin: 0;
-    line-height: 1.6;
-  }
+      .grid {
+        max-width: 980px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
 
-  .cta {
-    max-width: 980px;
-    margin: 2rem auto 0;
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
 
-  .btn {
-    display: inline-block;
-    padding: 0.9rem 1.1rem;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    text-decoration: none;
-    font-weight: 700;
-  }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-  .btn.primary {
-    border-color: transparent;
-  }
-</style>
+      .card {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 14px;
+        padding: 1.25rem 1.25rem 1.1rem;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .card.wide {
+        grid-column: 1 / -1;
+      }
+
+      .card h3 {
+        margin: 0 0 0.65rem;
+        line-height: 1.05;
+        font-size: clamp(1.5rem, 2.2vw, 2rem);
+        overflow-wrap: anywhere;
+      }
+
+      .card p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .cta {
+        max-width: 980px;
+        margin: 2rem auto 0;
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.9rem 1.1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .btn.primary {
+        border-color: transparent;
+      }
+    </style>
+  </body>
+</html>
