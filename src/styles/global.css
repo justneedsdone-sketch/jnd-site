@@ -1,38 +1,31 @@
 /*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
+  Based on Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
 */
 
 :root {
-	/* JND Brand */
-	--jnd-blue: #0b5ea8;       /* primary */
-	--jnd-blue-dark: #083d6d;  /* darker blue */
-	--jnd-red: #d11c2b;        /* accent red */
+	/* JND brand colors (pulled from your logo) */
+	--jnd-blue: #1060a0;
+	--jnd-blue-dark: #105090;
+	--jnd-red: #c02020;
 
-	/* Site theme */
+	/* Site accents */
 	--accent: var(--jnd-blue);
 	--accent-dark: var(--jnd-blue-dark);
-	--accent-warm: var(--jnd-red);
+	--accent-red: var(--jnd-red);
 
+	/* Base palette */
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
-
-	/* Softer header background that leans JND */
-	--gray-gradient: rgba(229, 233, 240, 0.55), rgba(11, 94, 168, 0.06), #fff;
+	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%),
 		0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
-
-	--radius: 14px;
-	--card-border: rgba(34, 41, 57, 0.10);
-
-	/* Focus ring */
-	--ring: rgba(11, 94, 168, 0.25);
 }
 
 @font-face {
@@ -93,42 +86,27 @@ b {
 	font-weight: 700;
 }
 
-/* Links */
 a {
 	color: var(--accent);
-	text-decoration-color: rgba(11, 94, 168, 0.35);
+	text-decoration-color: rgba(16, 96, 160, 0.45);
 	text-underline-offset: 3px;
 }
 a:hover {
-	color: var(--accent-warm);
-	text-decoration-color: rgba(209, 28, 43, 0.45);
+	color: var(--accent-dark);
+	text-decoration-color: rgba(16, 80, 144, 0.75);
 }
 
-/* Better keyboard focus */
-:focus-visible {
-	outline: 3px solid var(--ring);
-	outline-offset: 3px;
-	border-radius: 8px;
+::selection {
+	background: rgba(16, 96, 160, 0.2);
 }
 
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
+p { margin-bottom: 1em; }
+.prose p { margin-bottom: 2em; }
 
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
+textarea { width: 100%; font-size: 16px; }
+input { font-size: 16px; }
 
-table {
-	width: 100%;
-}
+table { width: 100%; }
 
 img {
 	max-width: 100%;
@@ -146,12 +124,10 @@ pre {
 	padding: 1.5em;
 	border-radius: 8px;
 }
-pre > code {
-	all: unset;
-}
+pre > code { all: unset; }
 
 blockquote {
-	border-left: 4px solid var(--accent-warm);
+	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0;
 	font-size: 1.333em;
@@ -160,103 +136,6 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
-}
-
-/* Optional: global “card” polish if your pages use .card */
-.card {
-	border: 1px solid var(--card-border);
-	border-radius: var(--radius);
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
-	background: #fff;
-}
-
-/* Optional: global “pill/badge” if your pages use .pill */
-.pill {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.35rem 0.7rem;
-	border-radius: 999px;
-	border: 1px solid rgba(11, 94, 168, 0.18);
-	background: rgba(11, 94, 168, 0.08);
-	color: var(--accent-dark);
-	font-weight: 700;
-	font-size: 0.95rem;
-}
-
-/* Optional: global buttons (won’t break your layout; just improves defaults) */
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-	font: inherit;
-	border-radius: 999px;
-	border: 1px solid rgba(11, 94, 168, 0.18);
-	background: #fff;
-	color: rgb(var(--black));
-	padding: 0.6rem 1rem;
-	cursor: pointer;
-	transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
-}
-button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-	border-color: rgba(11, 94, 168, 0.35);
-	box-shadow: 0 6px 18px rgba(11, 94, 168, 0.10);
-	transform: translateY(-1px);
-}
-button:active,
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active {
-	transform: translateY(0);
-}
-
-/* If your site uses anchor buttons like <a class="btn"> */
-a.btn,
-a.button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	padding: 0.65rem 1.05rem;
-	border-radius: 999px;
-	border: 1px solid rgba(11, 94, 168, 0.18);
-	text-decoration: none;
-	font-weight: 700;
-}
-
-/* Primary (JND Blue) */
-a.btn.primary,
-a.button.primary {
-	background: var(--accent);
-	color: #fff;
-	border-color: rgba(11, 94, 168, 0.35);
-}
-a.btn.primary:hover,
-a.button.primary:hover {
-	background: var(--accent-dark);
-	color: #fff;
-}
-
-/* Secondary (JND Red accent) */
-a.btn.red,
-a.button.red {
-	background: var(--accent-warm);
-	color: #fff;
-	border-color: rgba(209, 28, 43, 0.35);
-}
-a.btn.red:hover,
-a.button.red:hover {
-	filter: brightness(0.92);
-	color: #fff;
-}
-
-/* Nav active link helper (if your header uses aria-current="page") */
-nav a[aria-current="page"] {
-	color: var(--accent-dark);
-	text-decoration-color: rgba(11, 94, 168, 0.45);
 }
 
 @media (max-width: 720px) {
@@ -272,7 +151,7 @@ nav a[aria-current="page"] {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
+	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
 	white-space: nowrap;
