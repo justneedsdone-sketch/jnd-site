@@ -2,48 +2,85 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead
+      title="Just Needs Done Enterprises"
+      description="Print & signs done fast: business cards, yard signs, banners, and more."
+    />
+    <style>
+      :root{
+        --jnd-blue:#0b4fb3;
+        --jnd-red:#d62828;
+        --ink:#111827;
+        --muted:#6b7280;
+        --panel:#f3f4f6;
+        --line:#e5e7eb;
+      }
+      .wrap{max-width:1100px;margin:0 auto;padding:24px;}
+      .hero{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
+      .tag{display:inline-block;font-weight:700;color:#fff;background:var(--jnd-blue);padding:6px 10px;border-radius:999px;font-size:13px;}
+      h1{margin:14px 0 10px;color:var(--ink);font-size:42px;line-height:1.1;}
+      .sub{color:var(--muted);font-size:18px;max-width:70ch;}
+      .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+      .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);}
+      .btnPrimary{background:var(--jnd-blue);color:#fff;border-color:transparent;}
+      .btnAccent{background:var(--jnd-red);color:#fff;border-color:transparent;}
+      .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
+      .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;}
+      .card h3{margin:0 0 6px;font-size:18px;color:var(--ink);}
+      .card p{margin:0;color:var(--muted);}
+      .bar{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;}
+      .bar strong{color:var(--ink);}
+      @media (max-width: 900px){ .grid{grid-template-columns:1fr;} h1{font-size:34px;} }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="wrap">
+      <section class="hero">
+        <span class="tag">When you just need it done</span>
+        <h1>Print & signs that make you look legit.</h1>
+        <p class="sub">
+          Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
+          nonprofits, and the public.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="mailto:Just.Needs.Done@gmail.com?subject=Quote%20Request%20-%20Just%20Needs%20Done">
+            Get a quick quote
+          </a>
+          <a class="btn btnAccent" href="/contact/">Contact</a>
+          <a class="btn" href="/services/">See services</a>
+        </div>
+
+        <div class="grid" aria-label="Top services">
+          <div class="card">
+            <h3>Business Cards</h3>
+            <p>Clean, professional cards that help you close.</p>
+          </div>
+          <div class="card">
+            <h3>Yard Signs</h3>
+            <p>Fast turnaround, bold and readable from the road.</p>
+          </div>
+          <div class="card">
+            <h3>Banners</h3>
+            <p>Big impact for events, storefronts, and promotions.</p>
+          </div>
+        </div>
+
+        <div class="bar">
+          <strong>Quick start:</strong> Email <a href="mailto:Just.Needs.Done@gmail.com">Just.Needs.Done@gmail.com</a>
+          with what you need + size + quantity + deadline.
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>
