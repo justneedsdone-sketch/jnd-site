@@ -1,51 +1,145 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-const EMAIL = "Just.Needs.Done@gmail.com";
-// Keep this in sync with your Header.astro FB_URL:
-const FACEBOOK_URL = "https://www.facebook.com/";
+const SITE_TITLE = 'Just Needs Done Enterprises';
+const SITE_DESCRIPTION = 'Contact Just Needs Done Enterprises — fast, clean, affordable print & sign work.';
+const EMAIL = 'Just.Needs.Done@gmail.com';
+const FACEBOOK_URL = 'https://www.facebook.com/JustNeedsDone';
+
+// Google Maps “search” link (works on desktop + mobile)
+const MAPS_URL =
+	'https://www.google.com/maps/search/?api=1&query=' +
+	encodeURIComponent('511 1st St, LaSalle, IL 61301 (Inside of Whatnots and More)');
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead
-      title="Contact - Just Needs Done Enterprises"
-      description="Get a quick quote for print and sign work."
-    />
-    <style>
-      .wrap{max-width:900px;margin:0 auto;padding:24px}
-      h1{margin:0 0 10px}
-      .muted{color:rgba(var(--black),.65)}
-      .panel{margin-top:16px;border:1px solid rgba(var(--black),12%);border-radius:16px;background:#fff;padding:16px}
-      .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-      .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid rgba(var(--black),12%);}
-      .btnPrimary{background:var(--accent);color:#fff;border-color:transparent}
-      code{background:rgba(var(--black),6%);padding:2px 6px;border-radius:8px}
-    </style>
-  </head>
-  <body>
-    <Header />
-    <main class="wrap">
-      <h1>Contact</h1>
-      <p class="muted">Fastest way to get a quote: email details and we’ll take it from there.</p>
+	<head>
+		<BaseHead title={`Contact | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
 
-      <div class="panel">
-        <p><strong>Email:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
-        <p><strong>Facebook:</strong> <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Message us on Facebook</a></p>
-        <p class="muted" style="margin-top:10px">
-          Include: <code>product</code>, <code>size</code>, <code>quantity</code>, <code>deadline</code>, and any <code>art/logo</code>.
-        </p>
+	<body>
+		<Header />
 
-        <div class="row">
-          <a class="btn btnPrimary" href={`mailto:${EMAIL}?subject=Quote%20Request%20-%20Just%20Needs%20Done`}>Email for a quote</a>
-          <a class="btn" href="/services">Services</a>
-          <a class="btn" href="/gallery">Gallery</a>
-        </div>
-      </div>
-    </main>
-    <Footer />
-  </body>
+		<main class="wrap">
+			<section class="hero">
+				<h1>Contact</h1>
+				<p>
+					Email is the fastest way to reach us. If you include size, quantity, and deadline, we can quote it
+					quick.
+				</p>
+			</section>
+
+			<section class="grid" aria-label="Contact options">
+				<article class="card">
+					<h2>Email</h2>
+					<p class="value">
+						<a class="link" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+					</p>
+					<p class="action">
+						<a class="link" href={`mailto:${EMAIL}`}>Send an email</a>
+					</p>
+				</article>
+
+				<article class="card">
+					<h2>Address</h2>
+					<p class="value">
+						<a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+							511 1st St.<br />
+							Inside of Whatnots and More<br />
+							LaSalle, IL 61301
+						</a>
+					</p>
+					<p class="action">
+						<a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+					</p>
+				</article>
+
+				<article class="card">
+					<h2>Facebook</h2>
+					<p class="value">
+						<a class="link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+							Just Needs Done
+						</a>
+					</p>
+					<p class="action">
+						<a class="link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Message us on Facebook</a>
+					</p>
+				</article>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
 </html>
+
+<style>
+	.wrap {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 3.5rem 1rem 4rem;
+	}
+
+	.hero h1 {
+		font-size: clamp(2.25rem, 4vw, 3.25rem);
+		margin: 0 0 0.5rem;
+		line-height: 1.05;
+	}
+
+	.hero p {
+		margin: 0;
+		color: rgba(15, 23, 42, 0.75);
+		max-width: 70ch;
+	}
+
+	.grid {
+		display: grid;
+		gap: 1.25rem;
+		margin-top: 2rem;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	@media (max-width: 900px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.card {
+		border: 1px solid rgba(15, 23, 42, 0.12);
+		border-radius: 16px;
+		padding: 1.25rem 1.25rem 1.1rem;
+		background: #fff;
+		box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+	}
+
+	.card h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.1rem;
+		letter-spacing: 0.2px;
+	}
+
+	.value {
+		margin: 0;
+		line-height: 1.6;
+		color: rgba(15, 23, 42, 0.9);
+	}
+
+	.action {
+		margin: 0.9rem 0 0;
+	}
+
+	/* One consistent link style across all cards */
+	.link {
+		color: #1d4ed8; /* strong blue */
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.link:hover {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+</style>
