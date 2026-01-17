@@ -5,141 +5,155 @@ import Footer from '../components/Footer.astro';
 
 const SITE_TITLE = 'Just Needs Done Enterprises';
 const SITE_DESCRIPTION = 'Contact Just Needs Done Enterprises — fast, clean, affordable print & sign work.';
+
 const EMAIL = 'Just.Needs.Done@gmail.com';
 const FACEBOOK_URL = 'https://www.facebook.com/JustNeedsDone';
 
 // Google Maps “search” link (works on desktop + mobile)
 const MAPS_URL =
-	'https://www.google.com/maps/search/?api=1&query=' +
-	encodeURIComponent('511 1st St, LaSalle, IL 61301 (Inside of Whatnots and More)');
+  'https://www.google.com/maps/search/?api=1&query=' +
+  encodeURIComponent('511 1st St, LaSalle, IL 61301 (Located inside of Whatnots & More)');
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={`Contact | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
-	</head>
+  <head>
+    <BaseHead title={`Contact | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
 
-	<body>
-		<Header />
+  <body>
+    <Header />
 
-		<main class="wrap">
-			<section class="hero">
-				<h1>Contact</h1>
-				<p>
-					Email is the fastest way to reach us. If you include size, quantity, and deadline, we can quote it
-					quick.
-				</p>
-			</section>
+    <main class="wrap">
+      <section class="hero">
+        <h1>Contact</h1>
+        <p>
+          Email is the fastest way to reach us. Include size, quantity, and deadline and we’ll quote it quick.
+        </p>
+      </section>
 
-			<section class="grid" aria-label="Contact options">
-				<article class="card">
-					<h2>Email</h2>
-					<p class="value">
-						<a class="link" href={`mailto:${EMAIL}`}>{EMAIL}</a>
-					</p>
-					<p class="action">
-						<a class="link" href={`mailto:${EMAIL}`}>Send an email</a>
-					</p>
-				</article>
+      <section class="grid" aria-label="Contact options">
+        <!-- EMAIL -->
+        <article class="card">
+          <h2>Email</h2>
 
-				<article class="card">
-					<h2>Address</h2>
-					<p class="value">
-						<a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-							511 1st St.<br />
-							Inside of Whatnots and More<br />
-							LaSalle, IL 61301
-						</a>
-					</p>
-					<p class="action">
-						<a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-					</p>
-				</article>
+          <p class="value">
+            <a class="link" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </p>
 
-				<article class="card">
-					<h2>Facebook</h2>
-					<p class="value">
-						<a class="link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
-							Just Needs Done
-						</a>
-					</p>
-					<p class="action">
-						<a class="link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Message us on Facebook</a>
-					</p>
-				</article>
-			</section>
-		</main>
+          <p class="action">
+            <a class="link" href={`mailto:${EMAIL}`}>Send an email</a>
+          </p>
+        </article>
 
-		<Footer />
-	</body>
+        <!-- ADDRESS -->
+        <article class="card">
+          <h2>Address</h2>
+
+          <p class="value">
+            <a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+              511 1st St. LaSalle, IL 61301<br />
+              <span class="muted">(Located inside of Whatnots &amp; More)</span>
+            </a>
+          </p>
+
+          <p class="action">
+            <a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+          </p>
+        </article>
+
+        <!-- FACEBOOK -->
+        <article class="card">
+          <h2>Facebook</h2>
+
+          <p class="value">
+            <a class="link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+              Just Needs Done
+            </a>
+          </p>
+
+          <p class="action">
+            <a class="link" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+              Message us on Facebook
+            </a>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>
 
 <style>
-	.wrap {
-		max-width: 1100px;
-		margin: 0 auto;
-		padding: 3.5rem 1rem 4rem;
-	}
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 1rem 4rem;
+  }
 
-	.hero h1 {
-		font-size: clamp(2.25rem, 4vw, 3.25rem);
-		margin: 0 0 0.5rem;
-		line-height: 1.05;
-	}
+  .hero h1 {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    margin: 0 0 0.5rem;
+    line-height: 1.05;
+  }
 
-	.hero p {
-		margin: 0;
-		color: rgba(15, 23, 42, 0.75);
-		max-width: 70ch;
-	}
+  .hero p {
+    margin: 0;
+    color: rgba(15, 23, 42, 0.75);
+    max-width: 70ch;
+  }
 
-	.grid {
-		display: grid;
-		gap: 1.25rem;
-		margin-top: 2rem;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-	}
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
-	@media (max-width: 900px) {
-		.grid {
-			grid-template-columns: 1fr;
-		}
-	}
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
 
-	.card {
-		border: 1px solid rgba(15, 23, 42, 0.12);
-		border-radius: 16px;
-		padding: 1.25rem 1.25rem 1.1rem;
-		background: #fff;
-		box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-	}
+  .card {
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 16px;
+    padding: 1.25rem 1.25rem 1.1rem;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  }
 
-	.card h2 {
-		margin: 0 0 0.75rem;
-		font-size: 1.1rem;
-		letter-spacing: 0.2px;
-	}
+  .card h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+  }
 
-	.value {
-		margin: 0;
-		line-height: 1.6;
-		color: rgba(15, 23, 42, 0.9);
-	}
+  .value {
+    margin: 0;
+    line-height: 1.6;
+    color: rgba(15, 23, 42, 0.9);
+  }
 
-	.action {
-		margin: 0.9rem 0 0;
-	}
+  .action {
+    margin: 0.9rem 0 0;
+  }
 
-	/* One consistent link style across all cards */
-	.link {
-		color: #1d4ed8; /* strong blue */
-		font-weight: 700;
-		text-decoration: none;
-	}
+  .link {
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+  }
 
-	.link:hover {
-		text-decoration: underline;
-		text-underline-offset: 3px;
-	}
+  .link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .muted {
+    font-weight: 600;
+    color: rgba(15, 23, 42, 0.65);
+  }
 </style>
