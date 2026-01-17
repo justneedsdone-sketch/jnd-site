@@ -1,170 +1,159 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_TITLE } from '../consts';
+import Layout from "../layouts/Layout.astro";
+import { SITE_TITLE } from "../consts";
 
 const PAGE_TITLE = `Services | ${SITE_TITLE}`;
 const PAGE_DESC =
-  'Business cards, yard signs, banners, window perf, stickers/vinyl, sublimation, and button formats.';
+  "Business cards, yard signs, banners, window perf, stickers/vinyl, sublimation, and button formats.";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={PAGE_TITLE} description={PAGE_DESC} />
-  </head>
+<Layout title={PAGE_TITLE} description={PAGE_DESC}>
+  <main class="page">
+    <header class="hero">
+      <h1>Services</h1>
+      <p>
+        Fast, clean, affordable print and sign work for small businesses, nonprofits, and the public.
+        Email us what you need (size, quantity, deadline) and we’ll quote it.
+      </p>
+    </header>
 
-  <body>
-    <Header />
+    <section class="grid" aria-label="Services list">
+      <article class="card">
+        <h3>Business Cards</h3>
+        <p>Professional cards that help you look legit and close.</p>
+      </article>
 
-    <main class="page">
-      <header class="hero">
-        <h1>Services</h1>
+      <article class="card">
+        <h3>Yard Signs</h3>
+        <p>Bold, readable signs for promotions, events, and campaigns.</p>
+      </article>
+
+      <article class="card">
+        <h3>Banners</h3>
+        <p>Durable banners for storefronts, grand openings, and sales.</p>
+      </article>
+
+      <article class="card">
+        <h3>Window Perf</h3>
+        <p>Storefront graphics that look great and still let light in.</p>
+      </article>
+
+      <article class="card">
+        <h3>Stickers / Vinyl</h3>
+        <p>Decals, labels, and vinyl graphics for branding and info.</p>
+      </article>
+
+      <article class="card">
+        <h3>Sublimation</h3>
+        <p>Cups, tumblers, towels, license plates, and more — custom printed fast.</p>
+      </article>
+
+      <article class="card wide">
+        <h3>Button Formats</h3>
         <p>
-          Fast, clean, affordable print and sign work for small businesses, nonprofits, and the public.
-          Email us what you need (size, quantity, deadline) and we’ll quote it.
+          Buttons, magnets, spinners, keychains, mirrors, mirrored keychains — great for promos,
+          giveaways, and merch.
         </p>
-      </header>
+      </article>
+    </section>
 
-      <section class="grid" aria-label="Services list">
-        <article class="card">
-          <h3>Business Cards</h3>
-          <p>Professional cards that help you look legit and close.</p>
-        </article>
+    <section class="cta" aria-label="Get a quote">
+      <a class="btn primary" href="/contact/">Get a quick quote</a>
+      <a class="btn" href="https://www.facebook.com/JustNeedsDone" target="_blank" rel="noopener noreferrer">
+        Message us on Facebook
+      </a>
+    </section>
+  </main>
 
-        <article class="card">
-          <h3>Yard Signs</h3>
-          <p>Bold, readable signs for promotions, events, and campaigns.</p>
-        </article>
+  <style>
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 3rem;
+    }
 
-        <article class="card">
-          <h3>Banners</h3>
-          <p>Durable banners for storefronts, grand openings, and sales.</p>
-        </article>
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        <article class="card">
-          <h3>Window Perf</h3>
-          <p>Storefront graphics that look great and still let light in.</p>
-        </article>
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      margin: 0 0 0.5rem;
+    }
 
-        <article class="card">
-          <h3>Stickers / Vinyl</h3>
-          <p>Decals, labels, and vinyl graphics for branding and info.</p>
-        </article>
+    .hero p {
+      margin: 0 auto;
+      max-width: 60ch;
+      color: var(--muted, #4b5563);
+      line-height: 1.5;
+    }
 
-        <article class="card">
-          <h3>Sublimation</h3>
-          <p>Cups, tumblers, towels, license plates, and more — custom printed fast.</p>
-        </article>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
 
-        <article class="card wide">
-          <h3>Button Formats</h3>
-          <p>
-            Buttons, magnets, spinners, keychains, mirrors, mirrored keychains — great for promos,
-            giveaways, and merch.
-          </p>
-        </article>
-      </section>
+    .card {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      padding: 1.25rem;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
 
-      <section class="cta" aria-label="Get a quote">
-        <a class="btn primary" href="/contact/">Get a quick quote</a>
-        <a class="btn" href="https://www.facebook.com/JustNeedsDone" target="_blank" rel="noopener noreferrer">
-          Message us on Facebook
-        </a>
-      </section>
-    </main>
+    .card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.4rem;
+      line-height: 1.15;
+    }
 
-    <Footer />
+    .card p {
+      margin: 0;
+      color: var(--muted, #4b5563);
+      line-height: 1.5;
+    }
 
-    <style>
-      .page {
-        padding: 3rem 1.25rem 4rem;
-      }
+    .card.wide {
+      grid-column: 1 / -1;
+    }
 
-      .hero {
-        max-width: 880px;
-        margin: 0 auto 2rem;
-        text-align: center;
-      }
+    .cta {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-      .hero h1 {
-        font-size: clamp(2.25rem, 4vw, 3.25rem);
-        line-height: 1.1;
-        margin: 0 0 0.75rem;
-      }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+      font-weight: 700;
+      background: #fff;
+    }
 
-      .hero p {
-        margin: 0 auto;
-        max-width: 720px;
-        line-height: 1.6;
-      }
+    .btn.primary {
+      border: none;
+    }
 
+    @media (max-width: 900px) {
       .grid {
-        max-width: 980px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.25rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+    }
 
-      @media (max-width: 900px) {
-        .grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+    @media (max-width: 560px) {
+      .grid {
+        grid-template-columns: 1fr;
       }
-
-      @media (max-width: 600px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .card {
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        border-radius: 14px;
-        padding: 1.25rem 1.25rem 1.1rem;
-        background: #fff;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-      }
-
-      .card.wide {
-        grid-column: 1 / -1;
-      }
-
-      .card h3 {
-        margin: 0 0 0.65rem;
-        line-height: 1.05;
-        font-size: clamp(1.5rem, 2.2vw, 2rem);
-        overflow-wrap: anywhere;
-      }
-
-      .card p {
-        margin: 0;
-        line-height: 1.6;
-      }
-
-      .cta {
-        max-width: 980px;
-        margin: 2rem auto 0;
-        display: flex;
-        gap: 0.75rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 0.9rem 1.1rem;
-        border-radius: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .btn.primary {
-        border-color: transparent;
-      }
-    </style>
-  </body>
-</html>
+    }
+  </style>
+</Layout>

@@ -1,86 +1,88 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import { SITE_TITLE } from "../consts";
+
+const PAGE_TITLE = `${SITE_TITLE}`;
+const PAGE_DESC =
+  "Print & signs done fast: business cards, yard signs, banners, and more.";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead
-      title="Just Needs Done Enterprises"
-      description="Print & signs done fast: business cards, yard signs, banners, and more."
-    />
-    <style>
-      :root{
-        --jnd-blue:#0b4fb3;
-        --jnd-red:#d62828;
-        --ink:#111827;
-        --muted:#6b7280;
-        --panel:#f3f4f6;
-        --line:#e5e7eb;
-      }
-      .wrap{max-width:1100px;margin:0 auto;padding:24px;}
-      .hero{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
-      .tag{display:inline-block;font-weight:700;color:#fff;background:var(--jnd-blue);padding:6px 10px;border-radius:999px;font-size:13px;}
-      h1{margin:14px 0 10px;color:var(--ink);font-size:42px;line-height:1.1;}
-      .sub{color:var(--muted);font-size:18px;max-width:70ch;}
-      .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
-      .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);}
-      .btnPrimary{background:var(--jnd-blue);color:#fff;border-color:transparent;}
-      .btnAccent{background:var(--jnd-red);color:#fff;border-color:transparent;}
-      .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
-      .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;}
-      .card h3{margin:0 0 6px;font-size:18px;color:var(--ink);}
-      .card p{margin:0;color:var(--muted);}
-      .bar{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;}
-      .bar strong{color:var(--ink);}
-      @media (max-width: 900px){ .grid{grid-template-columns:1fr;} h1{font-size:34px;} }
-    </style>
-  </head>
+<Layout title={PAGE_TITLE} description={PAGE_DESC}>
+  <section class="wrap">
+    <section class="hero">
+      <span class="tag">When you just need it done</span>
+      <h1>Print & signs that make you look legit.</h1>
+      <p class="sub">
+        Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
+        nonprofits, and the public.
+      </p>
 
-  <body>
-    <Header />
+      <div class="ctaRow">
+        <a
+          class="btn btnPrimary"
+          href="mailto:Just.Needs.Done@gmail.com?subject=Quote%20Request%20-%20Just%20Needs%20Done"
+        >
+          Get a quick quote
+        </a>
+        <a class="btn btnAccent" href="/contact/">Contact</a>
+        <a class="btn" href="/services/">See services</a>
+      </div>
 
-    <main class="wrap">
-      <section class="hero">
-        <span class="tag">When you just need it done</span>
-        <h1>Print & signs that make you look legit.</h1>
-        <p class="sub">
-          Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
-          nonprofits, and the public.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="mailto:Just.Needs.Done@gmail.com?subject=Quote%20Request%20-%20Just%20Needs%20Done">
-            Get a quick quote
-          </a>
-          <a class="btn btnAccent" href="/contact/">Contact</a>
-          <a class="btn" href="/services/">See services</a>
+      <div class="grid" aria-label="Top services">
+        <div class="card">
+          <h3>Business Cards</h3>
+          <p>Clean, professional cards that help you close.</p>
         </div>
-
-        <div class="grid" aria-label="Top services">
-          <div class="card">
-            <h3>Business Cards</h3>
-            <p>Clean, professional cards that help you close.</p>
-          </div>
-          <div class="card">
-            <h3>Yard Signs</h3>
-            <p>Fast turnaround, bold and readable from the road.</p>
-          </div>
-          <div class="card">
-            <h3>Banners</h3>
-            <p>Big impact for events, storefronts, and promotions.</p>
-          </div>
+        <div class="card">
+          <h3>Yard Signs</h3>
+          <p>Fast turnaround, bold and readable from the road.</p>
         </div>
-
-        <div class="bar">
-          <strong>Quick start:</strong> Email <a href="mailto:Just.Needs.Done@gmail.com">Just.Needs.Done@gmail.com</a>
-          with what you need + size + quantity + deadline.
+        <div class="card">
+          <h3>Banners</h3>
+          <p>Big impact for events, storefronts, and promotions.</p>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <Footer />
-  </body>
-</html>
+      <div class="bar">
+        <strong>Quick start:</strong>
+        Email <a href="mailto:Just.Needs.Done@gmail.com">Just.Needs.Done@gmail.com</a>
+        with what you need + size + quantity + deadline.
+      </div>
+    </section>
+  </section>
+
+  <style>
+    :root{
+      --jnd-blue: var(--jnd-blue, #0b4fb3);
+      --jnd-red: var(--jnd-red, #d62828);
+      --ink:#111827;
+      --muted:#6b7280;
+      --panel:#f3f4f6;
+      --line:#e5e7eb;
+    }
+
+    .wrap{max-width:1100px;margin:0 auto;padding:24px;}
+    .hero{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
+    .tag{display:inline-block;font-weight:700;color:#fff;background:var(--jnd-blue);padding:6px 10px;border-radius:999px;font-size:13px;}
+    h1{margin:14px 0 10px;color:var(--ink);font-size:42px;line-height:1.1;}
+    .sub{color:var(--muted);font-size:18px;max-width:70ch;margin:0;}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+    .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--ink);}
+    .btnPrimary{background:var(--jnd-blue);color:#fff;border-color:transparent;}
+    .btnAccent{background:var(--jnd-red);color:#fff;border-color:transparent;}
+
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
+    .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;}
+    .card h3{margin:0 0 6px;font-size:18px;color:var(--ink);}
+    .card p{margin:0;color:var(--muted);}
+
+    .bar{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;color:var(--ink);}
+    .bar strong{color:var(--ink);}
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:34px;}
+    }
+  </style>
+</Layout>
