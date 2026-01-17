@@ -1,0 +1,51 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const EMAIL = "Just.Needs.Done@gmail.com";
+// Keep this in sync with your Header.astro FB_URL:
+const FACEBOOK_URL = "https://www.facebook.com/";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Contact - Just Needs Done Enterprises"
+      description="Get a quick quote for print and sign work."
+    />
+    <style>
+      .wrap{max-width:900px;margin:0 auto;padding:24px}
+      h1{margin:0 0 10px}
+      .muted{color:rgba(var(--black),.65)}
+      .panel{margin-top:16px;border:1px solid rgba(var(--black),12%);border-radius:16px;background:#fff;padding:16px}
+      .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+      .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid rgba(var(--black),12%);}
+      .btnPrimary{background:var(--accent);color:#fff;border-color:transparent}
+      code{background:rgba(var(--black),6%);padding:2px 6px;border-radius:8px}
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="wrap">
+      <h1>Contact</h1>
+      <p class="muted">Fastest way to get a quote: email details and we’ll take it from there.</p>
+
+      <div class="panel">
+        <p><strong>Email:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+        <p><strong>Facebook:</strong> <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Message us on Facebook</a></p>
+        <p class="muted" style="margin-top:10px">
+          Include: <code>product</code>, <code>size</code>, <code>quantity</code>, <code>deadline</code>, and any <code>art/logo</code>.
+        </p>
+
+        <div class="row">
+          <a class="btn btnPrimary" href={`mailto:${EMAIL}?subject=Quote%20Request%20-%20Just%20Needs%20Done`}>Email for a quote</a>
+          <a class="btn" href="/services">Services</a>
+          <a class="btn" href="/gallery">Gallery</a>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

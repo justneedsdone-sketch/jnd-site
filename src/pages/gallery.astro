@@ -1,0 +1,39 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const EMAIL = "Just.Needs.Done@gmail.com";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Gallery - Just Needs Done Enterprises"
+      description="Examples of recent print & sign work."
+    />
+    <style>
+      .wrap{max-width:1100px;margin:0 auto;padding:24px}
+      h1{margin:0 0 10px}
+      .muted{color:rgba(var(--black),.65)}
+      .panel{margin-top:16px;border:1px solid rgba(var(--black),12%);border-radius:16px;background:#fff;padding:16px}
+      .btn{display:inline-block;margin-top:12px;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid rgba(var(--black),12%);}
+      .btnPrimary{background:var(--accent);color:#fff;border-color:transparent}
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="wrap">
+      <h1>Gallery</h1>
+      <p class="muted">We’ll start dropping real job photos here as you publish new work posts.</p>
+
+      <div class="panel">
+        <p><strong>Coming next:</strong> a grid pulling from your <code>/work</code> posts and images.</p>
+        <p class="muted">For now, if you want something featured, email it over.</p>
+        <a class="btn btnPrimary" href={`mailto:${EMAIL}?subject=Gallery%20Feature%20-%20Just%20Needs%20Done`}>Send a photo to feature</a>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

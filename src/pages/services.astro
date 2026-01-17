@@ -1,0 +1,62 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const EMAIL = "Just.Needs.Done@gmail.com";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Services - Just Needs Done Enterprises"
+      description="Business cards, yard signs, banners, stickers/vinyl, window perf, sublimation, and more."
+    />
+    <style>
+      .wrap{max-width:1100px;margin:0 auto;padding:24px}
+      h1{margin:0 0 10px}
+      .muted{color:rgba(var(--black),.65)}
+      .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+      .card{border:1px solid rgba(var(--black),12%);border-radius:16px;background:#fff;padding:16px}
+      .card h3{margin:0 0 6px}
+      .card p{margin:0;color:rgba(var(--black),.65)}
+      .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+      .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid rgba(var(--black),12%);}
+      .btnPrimary{background:var(--accent);color:#fff;border-color:transparent}
+      @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="wrap">
+      <h1>Services</h1>
+      <p class="muted">
+        Fast, clean, affordable print & sign work for small businesses, nonprofits, and the public.
+        Email us what you need (size, qty, deadline) and we’ll quote it.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Business Cards</h3>
+          <p>Professional cards that help you look legit and close.</p>
+        </div>
+        <div class="card">
+          <h3>Yard Signs</h3>
+          <p>Bold, readable signs for promotions, events, and campaigns.</p>
+        </div>
+        <div class="card">
+          <h3>Banners</h3>
+          <p>Durable banners for storefronts, grand openings, and sales.</p>
+        </div>
+        <div class="card">
+          <h3>Window Perf</h3>
+          <p>Storefront graphics that look great and still let light in.</p>
+        </div>
+        <div class="card">
+          <h3>Stickers / Vinyl</h3>
+          <p>Decals, labels, and vinyl graphics for branding and info.</p>
+        </div>
+        <div class="card">
+          <h3>Sublimation</h3>
+          <p>Cu
