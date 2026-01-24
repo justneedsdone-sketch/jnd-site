@@ -5,144 +5,102 @@ import { SITE_TITLE } from "../consts";
 const PAGE_TITLE = `Services | ${SITE_TITLE}`;
 const PAGE_DESC =
   "Business cards, yard signs, banners, window perf, stickers/vinyl, sublimation, and button formats.";
-
-const FB_URL = "https://www.facebook.com/JustNeedsDone";
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESC}>
-  <header class="hero">
-    <h1>Services</h1>
-    <p>
-      Fast, clean, affordable print and sign work for small businesses, nonprofits, and the public.
-      Email us what you need (size, quantity, deadline) and we’ll quote it.
-    </p>
-  </header>
-
-  <section class="grid" aria-label="Services list">
-    <article class="card">
-      <h3>Business Cards</h3>
-      <p>Professional cards that help you look legit and close.</p>
-    </article>
-
-    <article class="card">
-      <h3>Yard Signs</h3>
-      <p>Bold, readable signs for promotions, events, and campaigns.</p>
-    </article>
-
-    <article class="card">
-      <h3>Banners</h3>
-      <p>Durable banners for storefronts, grand openings, and sales.</p>
-    </article>
-
-    <article class="card">
-      <h3>Window Perf</h3>
-      <p>Storefront graphics that look great and still let light in.</p>
-    </article>
-
-    <article class="card">
-      <h3>Stickers / Vinyl</h3>
-      <p>Decals, labels, and vinyl graphics for branding and info.</p>
-    </article>
-
-    <article class="card">
-      <h3>Sublimation</h3>
-      <p>Cups, tumblers, towels, license plates, and more — custom printed fast.</p>
-    </article>
-
-    <article class="card wide">
-      <h3>Button Formats</h3>
-      <p>
-        Buttons, magnets, spinners, keychains, mirrors, mirrored keychains — great for promos,
-        giveaways, and merch.
+  <section class="wrap">
+    <header class="hero">
+      <span class="tag">Fast • Clean • Affordable</span>
+      <h1>Services</h1>
+      <p class="sub">
+        Tell us what you need (size, quantity, deadline) and we’ll quote it quick.
       </p>
-    </article>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="/contact/">Get a quick quote</a>
+        <a
+          class="btn"
+          href="https://www.facebook.com/JustNeedsDone"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Message us on Facebook
+        </a>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Service categories">
+      <article class="card">
+        <h3>Business Cards</h3>
+        <p>Clean, professional cards that help you look legit and close.</p>
+      </article>
+
+      <article class="card">
+        <h3>Yard Signs</h3>
+        <p>Bold, readable signs for promotions, events, and campaigns.</p>
+      </article>
+
+      <article class="card">
+        <h3>Banners</h3>
+        <p>Big impact for grand openings, sales, and storefront promotions.</p>
+      </article>
+
+      <article class="card">
+        <h3>Window Perf</h3>
+        <p>Storefront graphics that look great and still let light in.</p>
+      </article>
+
+      <article class="card">
+        <h3>Stickers / Vinyl</h3>
+        <p>Decals, labels, and vinyl graphics for branding and info.</p>
+      </article>
+
+      <article class="card">
+        <h3>Sublimation</h3>
+        <p>Cups, tumblers, towels, license plates, and more — custom printed fast.</p>
+      </article>
+
+      <article class="card wide">
+        <h3>Button Formats</h3>
+        <p>
+          Buttons, magnets, spinners, keychains, mirrors, mirrored keychains — great for promos,
+          giveaways, and merch.
+        </p>
+      </article>
+    </section>
+
+    <section class="bar" aria-label="How to get a quote">
+      <strong>Quick start:</strong>
+      Email <a class="link" href="mailto:Just.Needs.Done@gmail.com">Just.Needs.Done@gmail.com</a>
+      with what you need + size + quantity + deadline.
+    </section>
   </section>
-
-  <section class="cta" aria-label="Get a quote">
-    <a class="btn primary" href="/contact/">Get a quick quote</a>
-    <a class="btn outline" href={FB_URL} target="_blank" rel="noopener noreferrer">
-      Message us on Facebook
-    </a>
-  </section>
-
-  <style>
-    .hero {
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    .hero h1 {
-      margin: 0 0 0.5rem;
-    }
-    .hero p {
-      margin: 0 auto;
-      max-width: 70ch;
-      color: rgba(var(--black), 0.7);
-    }
-
-    .grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 1.5rem;
-    }
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .card {
-      border: 1px solid rgba(var(--black), 0.12);
-      border-radius: 16px;
-      padding: 1.1rem 1.1rem 1rem;
-      background: #fff;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-    }
-    .card h3 {
-      margin: 0 0 0.5rem;
-      line-height: 1.15;
-    }
-    .card p {
-      margin: 0;
-      color: rgba(var(--black), 0.7);
-    }
-
-    .wide {
-      grid-column: 1 / -1;
-    }
-
-    .cta {
-      margin-top: 2rem;
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 800;
-      border: 1px solid rgba(var(--black), 0.12);
-    }
-
-    /* JND brand color vibe (uses your global --accent which we set to JND blue) */
-    .primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: transparent;
-    }
-
-    .outline {
-      background: #fff;
-      color: var(--accent);
-      border-color: rgba(var(--black), 0.18);
-    }
-
-    .btn:hover {
-      filter: brightness(0.98);
-    }
-  </style>
 </Layout>
+
+<style>
+  :root{
+    --jnd-blue: var(--jnd-blue, #0b4fb3);
+    --jnd-red: var(--jnd-red, #d62828);
+    --ink:#111827;
+    --muted:#6b7280;
+    --panel:#f3f4f6;
+    --line:#e5e7eb;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:24px;}
+  .hero{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
+  .tag{display:inline-block;font-weight:800;color:#fff;background:var(--jnd-blue);padding:6px 10px;border-radius:999px;font-size:13px;}
+  h1{margin:14px 0 10px;color:var(--ink);font-size:42px;line-height:1.1;overflow-wrap:normal;word-break:normal;hyphens:none;}
+  .sub{color:var(--muted);font-size:18px;max-width:70ch;margin:0;}
+  .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+  .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--ink);}
+  .btnPrimary{background:var(--jnd-blue);color:#fff;border-color:transparent;}
+  .btnPrimary:hover{filter:brightness(0.95);}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
+  .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;}
+  .card h3{margin:0 0 6px;font-size:18px;color:var(--ink);overflow-wrap:normal;word-break:normal;hyphens:none;}
+  .card p{margin:0;color:var(--muted);line-height:1.5;}
+  .wide{grid-column:1/-1;}
+  .bar{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;color:var(--ink);}
+  .link{font-weight:800;}
+  @media (max-width: 900px){ .grid{grid-template-columns:1fr;} h1{font-size:34px;} }
+</style>
