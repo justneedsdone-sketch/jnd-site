@@ -8,22 +8,31 @@ const PAGE_DESC = "Print & signs done fast: business cards, yard signs, banners,
 const EMAIL = "Just.Needs.Done@gmail.com";
 const SUBJECT = "Quote Request - Just Needs Done";
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}`;
+
+const FB_URL = "https://www.facebook.com/JustNeedsDone";
+const ADDRESS_TEXT = "511 1st St., LaSalle, IL 61301 (Located inside of Whatnots & More)";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=511%201st%20St%2C%20LaSalle%2C%20IL%2061301";
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESC}>
 	<section class="home">
 		<div class="hero">
 			<p class="pill">When you just need it done</p>
-			<h1>Print & signs that make you look legit.</h1>
+			<h1>Print &amp; signs that make you look legit.</h1>
 			<p class="sub">
 				Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
 				nonprofits, and the public.
+			</p>
+
+			<p class="meta">
+				<a class="link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">{ADDRESS_TEXT}</a>
 			</p>
 
 			<div class="cta" aria-label="Primary actions">
 				<a class="btn primary" href={MAILTO}>Get a quick quote</a>
 				<a class="btn red" href="/contact/">Contact</a>
 				<a class="btn ghost" href="/services/">See services</a>
+				<a class="btn" href={FB_URL} target="_blank" rel="noopener noreferrer">Message on Facebook</a>
 			</div>
 
 			<div class="grid" aria-label="Top services">
@@ -85,9 +94,21 @@ const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}`;
 
 		.sub {
 			margin: 0;
-			max-width: 70ch;
+			max-width: 72ch;
 			color: rgba(var(--black), 72%);
 			font-size: 1.05rem;
+		}
+
+		.meta {
+			margin: 0.85rem 0 0;
+			color: rgba(var(--black), 70%);
+			font-weight: 700;
+		}
+
+		.link {
+			color: var(--accent-dark);
+			text-decoration: underline;
+			text-underline-offset: 2px;
 		}
 
 		.cta {
