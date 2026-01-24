@@ -3,86 +3,188 @@ import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE } from "../consts";
 
 const PAGE_TITLE = `${SITE_TITLE}`;
-const PAGE_DESC =
-  "Print & signs done fast: business cards, yard signs, banners, and more.";
+const PAGE_DESC = "Print & signs done fast: business cards, yard signs, banners, and more.";
+
+const EMAIL = "Just.Needs.Done@gmail.com";
+const SUBJECT = "Quote Request - Just Needs Done";
+const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}`;
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESC}>
-  <section class="wrap">
-    <section class="hero">
-      <span class="tag">When you just need it done</span>
-      <h1>Print & signs that make you look legit.</h1>
-      <p class="sub">
-        Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
-        nonprofits, and the public.
-      </p>
+	<section class="home">
+		<div class="hero">
+			<p class="pill">When you just need it done</p>
+			<h1>Print & signs that make you look legit.</h1>
+			<p class="sub">
+				Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
+				nonprofits, and the public.
+			</p>
 
-      <div class="ctaRow">
-        <a
-          class="btn btnPrimary"
-          href="mailto:Just.Needs.Done@gmail.com?subject=Quote%20Request%20-%20Just%20Needs%20Done"
-        >
-          Get a quick quote
-        </a>
-        <a class="btn btnAccent" href="/contact/">Contact</a>
-        <a class="btn" href="/services/">See services</a>
-      </div>
+			<div class="cta" aria-label="Primary actions">
+				<a class="btn primary" href={MAILTO}>Get a quick quote</a>
+				<a class="btn red" href="/contact/">Contact</a>
+				<a class="btn ghost" href="/services/">See services</a>
+			</div>
 
-      <div class="grid" aria-label="Top services">
-        <div class="card">
-          <h3>Business Cards</h3>
-          <p>Clean, professional cards that help you close.</p>
-        </div>
-        <div class="card">
-          <h3>Yard Signs</h3>
-          <p>Fast turnaround, bold and readable from the road.</p>
-        </div>
-        <div class="card">
-          <h3>Banners</h3>
-          <p>Big impact for events, storefronts, and promotions.</p>
-        </div>
-      </div>
+			<div class="grid" aria-label="Top services">
+				<article class="card">
+					<h2>Business Cards</h2>
+					<p>Clean, professional cards that help you close.</p>
+				</article>
+				<article class="card">
+					<h2>Yard Signs</h2>
+					<p>Fast turnaround, bold and readable from the road.</p>
+				</article>
+				<article class="card">
+					<h2>Banners</h2>
+					<p>Big impact for events, storefronts, and promotions.</p>
+				</article>
+			</div>
 
-      <div class="bar">
-        <strong>Quick start:</strong>
-        Email <a href="mailto:Just.Needs.Done@gmail.com">Just.Needs.Done@gmail.com</a>
-        with what you need + size + quantity + deadline.
-      </div>
-    </section>
-  </section>
+			<div class="quick" aria-label="Quick start">
+				<strong>Quick start:</strong>
+				Email <a href={MAILTO}>{EMAIL}</a> with what you need + size + quantity + deadline.
+			</div>
+		</div>
+	</section>
 
-  <style>
-    :root{
-      --jnd-blue: var(--jnd-blue, #0b4fb3);
-      --jnd-red: var(--jnd-red, #d62828);
-      --ink:#111827;
-      --muted:#6b7280;
-      --panel:#f3f4f6;
-      --line:#e5e7eb;
-    }
+	<style>
+		.home {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 2.5rem 1rem 4rem;
+		}
 
-    .wrap{max-width:1100px;margin:0 auto;padding:24px;}
-    .hero{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
-    .tag{display:inline-block;font-weight:700;color:#fff;background:var(--jnd-blue);padding:6px 10px;border-radius:999px;font-size:13px;}
-    h1{margin:14px 0 10px;color:var(--ink);font-size:42px;line-height:1.1;}
-    .sub{color:var(--muted);font-size:18px;max-width:70ch;margin:0;}
+		.hero {
+			background: #fff;
+			border: 1px solid rgba(var(--black), 12%);
+			border-radius: 18px;
+			padding: 2rem;
+			box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+		}
 
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
-    .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--ink);}
-    .btnPrimary{background:var(--jnd-blue);color:#fff;border-color:transparent;}
-    .btnAccent{background:var(--jnd-red);color:#fff;border-color:transparent;}
+		.pill {
+			display: inline-block;
+			margin: 0;
+			padding: 0.45rem 0.75rem;
+			border-radius: 999px;
+			font-weight: 800;
+			font-size: 0.85rem;
+			letter-spacing: 0.01em;
+			color: var(--accent-dark);
+			background: rgba(16, 96, 160, 0.12);
+			border: 1px solid rgba(16, 96, 160, 0.25);
+		}
 
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
-    .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px;}
-    .card h3{margin:0 0 6px;font-size:18px;color:var(--ink);}
-    .card p{margin:0;color:var(--muted);}
+		h1 {
+			margin: 0.9rem 0 0.6rem;
+			font-size: clamp(2.2rem, 4vw, 3.2rem);
+			line-height: 1.05;
+			letter-spacing: -0.02em;
+		}
 
-    .bar{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:16px;color:var(--ink);}
-    .bar strong{color:var(--ink);}
+		.sub {
+			margin: 0;
+			max-width: 70ch;
+			color: rgba(var(--black), 72%);
+			font-size: 1.05rem;
+		}
 
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr;}
-      h1{font-size:34px;}
-    }
-  </style>
+		.cta {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			margin-top: 1.25rem;
+		}
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+			padding: 0.75rem 0.95rem;
+			border-radius: 12px;
+			text-decoration: none;
+			font-weight: 900;
+			border: 1px solid rgba(var(--black), 14%);
+			background: #fff;
+			color: rgb(var(--black));
+			transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+		}
+
+		.btn:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+		}
+
+		.btn:focus-visible {
+			outline: 3px solid rgba(16, 96, 160, 0.25);
+			outline-offset: 2px;
+		}
+
+		.btn.primary {
+			background: var(--accent);
+			color: #fff;
+			border-color: transparent;
+		}
+
+		.btn.red {
+			background: var(--accent-red);
+			color: #fff;
+			border-color: transparent;
+		}
+
+		.btn.ghost {
+			background: #fff;
+			border-color: rgba(16, 96, 160, 0.28);
+			color: var(--accent-dark);
+		}
+
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.9rem;
+			margin-top: 1.35rem;
+		}
+
+		.card {
+			border: 1px solid rgba(var(--black), 12%);
+			border-radius: 16px;
+			padding: 1rem;
+			background: #fff;
+		}
+
+		.card h2 {
+			margin: 0 0 0.35rem;
+			font-size: 1.05rem;
+			letter-spacing: -0.01em;
+		}
+
+		.card p {
+			margin: 0;
+			color: rgba(var(--black), 70%);
+		}
+
+		.quick {
+			margin-top: 1.25rem;
+			border: 1px solid rgba(var(--black), 12%);
+			border-radius: 16px;
+			background: rgba(var(--gray-light), 40%);
+			padding: 1rem;
+			color: rgba(var(--black), 88%);
+		}
+
+		.quick a {
+			font-weight: 900;
+		}
+
+		@media (max-width: 900px) {
+			.hero {
+				padding: 1.35rem;
+			}
+			.grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
 </Layout>
