@@ -26,12 +26,13 @@ Status date: 2026-08-06
 - Branding is partially customized through the logo and blue/red styling, but implemented colors and typography do not yet match the approved brand guide.
 - Header navigation wraps and scrolls on smaller screens but has not been polished as a deliberate mobile pattern.
 - Contact resembles the shared shell but does not use `Layout.astro`.
-- The repository-side 404 correction is complete; the production HTTP status must be verified after the connected deployment finishes.
+- The repository-side 404 correction is deployed; fresh unknown production paths and `/work/` return the branded page with HTTP 404.
 
 ## Known bugs and production concerns
 
-- Before this pass was deployed, an unknown live route returned Home with HTTP 200. The repository contained no catch-all route, `_redirects`, Worker, or tracked Cloudflare setting; the missing top-level `404.html` caused Cloudflare Pages' documented SPA fallback.
-- `/work/` is not implemented in source. It should return the branded 404 after deployment, not Home.
+- Before this pass was deployed, an unknown live route returned Home with HTTP 200. The missing top-level `404.html` caused Cloudflare Pages' documented SPA fallback; that behavior is corrected for fresh paths.
+- `/work/` is not implemented in source and now returns the branded production 404.
+- At post-deployment verification, exact requests for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml` still returned cached pre-deployment 200 responses. They include `Cache-Control: public, s-maxage=604800` and a nonzero `Age`; adding a cache-busting query returns the new branded 404. Purge these URLs in Cloudflare or allow the seven-day shared-cache lifetime to expire, then verify again. No Cloudflare cache or settings were changed in this task.
 - `npm audit --omit=dev` reports 12 dependency findings: 2 moderate and 10 high, including direct findings for the installed Astro and Sharp versions. Available direct fixes require major-version upgrades and need a separate compatibility-tested task.
 - Deployment build settings and any account-side redirects or fallback rules remain unverified because they are not versioned in the repository.
 
@@ -92,9 +93,11 @@ Status date: 2026-08-06
 - The generated sitemap uses `https://justneedsdone.com` and excludes About, Blog, demo posts, RSS, and 404.
 - Generated internal page links, fragments, and local asset references resolve.
 - Source/reference scans find no remaining `example.com`, RSS, MDX, Blog content, generic favicon, or placeholder social-image usage.
+- Production serves the updated favicon, social metadata, Gallery fragment, and sitemap; fresh unknown paths return HTTP 404.
+- The remaining exact legacy-path 200 responses are confirmed stale cache entries rather than files in the current repository or build.
 - No lint or test commands exist to run.
 - Dependency audit findings are recorded above; no automatic or force audit fix was run.
 
 ## Recommended next task
 
-After this commit deploys, verify Cloudflare returns the branded page with HTTP 404 for a unique nonexistent URL. No dashboard change should be required when Pages receives top-level `dist/404.html`; if the live host still returns 200, confirm the latest production deployment uses `main`, runs the Astro build, publishes `dist`, and has no Worker, redirect, or account-side SPA rule rewriting unmatched paths to `/`. Then plan the dependency major-version upgrade as an isolated compatibility task before responsive or visual redesign.
+Purge the Cloudflare cache for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml`—or wait for their advertised seven-day shared-cache lifetime to expire—then confirm each returns the branded page with HTTP 404 without a query string. This is cache cleanup, not a source or routing change. Afterward, plan the dependency major-version upgrade as an isolated compatibility task before responsive or visual redesign.

@@ -9,7 +9,8 @@ This checklist is a proposal. Items that change public content, business facts, 
 - [x] Connect the Home Gallery button to the existing featured Facebook post.
 - [x] Remove the unapproved About, Blog, demo-post, RSS, and MDX routes/infrastructure without inventing replacement content.
 - [x] Add a top-level generated `404.html` through `src/pages/404.astro` so Cloudflare Pages can stop treating the site as an SPA.
-- [ ] After the deployment completes, verify an unknown production URL returns the branded page with HTTP 404 rather than Home with HTTP 200. If it does not, confirm `main`, the Astro build command, `dist` output, and absence of Worker/redirect/SPA rewrite rules in Cloudflare.
+- [x] Verify a fresh unknown production URL returns the branded page with HTTP 404 rather than Home with HTTP 200.
+- [ ] Purge the Cloudflare cache for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml` (or wait for their seven-day `s-maxage` to expire), then verify the exact URLs return HTTP 404 without cache-busting query strings.
 - [ ] Confirm the production branch, build command, output directory, and fallback rules in the connected Cloudflare account, then document them without changing deployment configuration.
 
 ## High
@@ -42,7 +43,7 @@ This checklist is a proposal. Items that change public content, business facts, 
 
 ## Proposed next five development tasks
 
-1. Production verification: confirm the deployed 404 status and Cloudflare build settings after this commit reaches production.
+1. Production cache cleanup: clear or wait out the four documented legacy-path cache entries, verify their 404 statuses, and confirm Cloudflare build settings.
 2. Dependency maintenance: plan and test the required Astro/Sharp major upgrades in an isolated, reviewable task.
 3. Responsive structure: correct the shared main-width/padding constraint and complete mobile/desktop page QA.
 4. Brand implementation: apply approved colors and Oswald/Inter through a focused, accessible typography/palette task.

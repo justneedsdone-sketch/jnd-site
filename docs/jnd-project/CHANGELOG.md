@@ -25,6 +25,8 @@ Meaningful project changes should be recorded here in reverse chronological orde
 - Confirmed the sitemap uses the production domain and excludes the retired starter routes.
 - Confirmed no source references remain to `example.com`, RSS, MDX, Blog content, the generic social image, or the generic favicon.
 - Recorded dependency-audit findings without performing an out-of-scope major framework upgrade.
+- Verified the connected deployment now serves new unknown paths and `/work/` with the branded page and HTTP 404.
+- Identified cached pre-deployment responses for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml`; cache-busted requests return the correct 404, while exact cached responses advertise a seven-day shared-cache lifetime. No Cloudflare cache or settings were changed.
 
 ## 2026-08-06 — Project documentation baseline
 

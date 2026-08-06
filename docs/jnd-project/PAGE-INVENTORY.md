@@ -73,13 +73,13 @@ Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap preven
 - Assets: Shared JND logo/favicon/social image and fonts; no page photograph.
 - Mobile concerns: Actions wrap and remain centered; shared layout/header concerns apply.
 - Desktop concerns: The content is intentionally compact and capped by the shared layout.
-- Missing/unfinished: Confirm the live host returns HTTP 404 after deployment; inspect Cloudflare account rules only if it still returns 200.
+- Production result: Fresh unknown paths and `/work/` return this branded page with HTTP 404.
 - SEO title: `Page Not Found | Just Needs Done Enterprises`
 - SEO description: `The requested page could not be found.`
 
 ## Retired routes and endpoint
 
-The following unapproved starter routes are intentionally absent from source and generated output. They should resolve to the branded 404 after deployment; no replacement business content was invented.
+The following unapproved starter routes are intentionally absent from source, generated output, and the current sitemap. Fresh/cache-busted requests resolve to the branded 404; no replacement business content was invented.
 
 - `/about/`
 - `/blog/`
@@ -91,6 +91,8 @@ The following unapproved starter routes are intentionally absent from source and
 - `/rss.xml`
 
 Removed route infrastructure includes the dynamic Blog page, five content entries, `BlogPost.astro`, `FormattedDate.astro`, `content.config.ts`, `@astrojs/mdx`, and `@astrojs/rss`.
+
+Post-deployment cache note: exact requests to `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml` still returned pre-deployment content with HTTP 200 during verification. Their responses advertise `s-maxage=604800` and nonzero `Age`, while query-busted requests return the correct 404. These four URLs require a Cloudflare cache purge or cache expiry; the other retired demo-post URLs already returned 404.
 
 ## Generated sitemap
 
