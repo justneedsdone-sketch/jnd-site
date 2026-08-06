@@ -21,9 +21,10 @@ const year = new Date().getFullYear();
 <style>
 	.site-footer {
 		margin-top: 4rem;
-		padding: 2.25rem 1rem;
-		border-top: 1px solid rgba(var(--black), 10%);
-		background: white;
+		padding: 2.25rem var(--jnd-gutter);
+		border-top: 4px solid var(--jnd-red);
+		background: var(--jnd-deep-blue);
+		color: var(--jnd-white);
 	}
 
 	.inner {
@@ -35,7 +36,7 @@ const year = new Date().getFullYear();
 	.copyright {
 		margin: 0;
 		font-size: 0.95rem;
-		color: rgba(var(--black), 70%);
+		color: var(--jnd-white);
 	}
 
 	.tagline {
@@ -48,11 +49,13 @@ const year = new Date().getFullYear();
 	}
 
 	.contact a {
+		color: var(--jnd-white);
 		font-weight: 600;
-		text-decoration: none;
+		text-decoration-color: rgba(252, 252, 252, 0.65);
 	}
 
 	.contact a:hover {
-		text-decoration: underline;
+		color: var(--jnd-white);
+		text-decoration-color: currentColor;
 	}
 </style>

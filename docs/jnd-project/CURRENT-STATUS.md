@@ -4,53 +4,46 @@ Status date: 2026-08-06
 
 ## Already complete
 
-- The existing Astro 5 application and npm lockfile remain intact; no replacement project is needed.
-- Home, Services, Gallery, and Contact are the four public business routes.
-- A shared JND header and footer provide the approved logo, primary navigation, Facebook link, email, and tagline.
-- Home provides quote, Contact, Services, Facebook, location, and Gallery actions.
-- Services lists business cards, yard signs, banners, window perf, stickers/vinyl, sublimation, and button formats.
-- Contact provides email, location, Maps, and Facebook actions.
-- Gallery embeds one featured Facebook post and now has a valid fragment target for the Home promo button.
-- The malformed Services card-heading CSS is corrected and no longer produces a CSS-minification warning.
-- Astro's `site` value is `https://justneedsdone.com`; generated canonical, Open Graph, Twitter, and sitemap URLs use the production domain.
-- The existing approved `public/jnd-logo.png` is used unchanged for the header, favicon reference, and default social metadata image.
-- A branded `src/pages/404.astro` builds to top-level `dist/404.html`.
-- The unapproved starter About, Blog, five demo posts, RSS endpoint, and their route-only infrastructure are removed from generated output.
-- Direct MDX and RSS dependencies were removed because no approved content uses them.
-- Live traffic is delivered through Cloudflare; the evidence matches Cloudflare Pages' documented static-site behavior.
+- The existing Astro 5 application, routes, npm lockfile, and Cloudflare-connected deployment architecture remain intact.
+- Home, Services, Gallery, Contact, and a branded 404 are the five generated HTML pages.
+- All five pages now use `Layout.astro`, the shared head, header, footer, skip link, and responsive `main` architecture.
+- A shared shell provides approximately 1100px of inner desktop content with fluid 16–32px gutters; the unintended 720px parent cap and nested page padding are removed.
+- Shared hero, button, card, panel, information-bar, spacing, and breakpoint rules replace the repeated page-local versions while retaining focused page-specific CSS.
+- The mobile header uses a two-row layout with four equal navigation targets instead of horizontal scrolling. Desktop retains a single-row header.
+- The approved colors are implemented as CSS custom properties and the approved Oswald/Inter typography is active with system fallbacks.
+- Visible keyboard focus, a skip-to-content link, `aria-current` navigation state, 44px minimum controls, and reduced-motion handling are implemented.
+- The approved `public/jnd-logo.png` remains unchanged and is proportionally displayed in the header, favicon reference, and default social metadata.
+- Production metadata, canonical URLs, sitemap generation, the Gallery fragment, and branded 404 behavior remain in place.
+- Unapproved Astro starter About, Blog, demo-post, MDX, and RSS routes remain absent from generated output.
 
 ## Partially complete
 
-- Gallery is an embed plus “coming next” copy, not a real portfolio or automatic Work feed.
-- Responsive rules exist, but the shared `main` width and nested page wrappers undermine the intended 1100px layouts.
-- Branding is partially customized through the logo and blue/red styling, but implemented colors and typography do not yet match the approved brand guide.
-- Header navigation wraps and scrolls on smaller screens but has not been polished as a deliberate mobile pattern.
-- Contact resembles the shared shell but does not use `Layout.astro`.
-- The repository-side 404 correction is deployed; fresh unknown production paths and `/work/` return the branded page with HTTP 404.
+- Gallery is one remote Facebook embed plus “coming next” copy, not a real portfolio or automatic Work feed.
+- Responsive browser checks cover the required viewport widths, but physical-device testing and testing with restrictive font/privacy settings remain useful.
+- Approved fonts load through the Google Fonts CSS API with `display=swap` and local system fallbacks; the old local Atkinson files remain tracked but unused pending asset-cleanup approval.
+- Business facts are still repeated across page files rather than centralized.
 
 ## Known bugs and production concerns
 
-- Before this pass was deployed, an unknown live route returned Home with HTTP 200. The missing top-level `404.html` caused Cloudflare Pages' documented SPA fallback; that behavior is corrected for fresh paths.
-- `/work/` is not implemented in source and now returns the branded production 404.
-- At post-deployment verification, exact requests for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml` still returned cached pre-deployment 200 responses. They include `Cache-Control: public, s-maxage=604800` and a nonzero `Age`; adding a cache-busting query returns the new branded 404. Purge these URLs in Cloudflare or allow the seven-day shared-cache lifetime to expire, then verify again. No Cloudflare cache or settings were changed in this task.
-- `npm audit --omit=dev` reports 12 dependency findings: 2 moderate and 10 high, including direct findings for the installed Astro and Sharp versions. Available direct fixes require major-version upgrades and need a separate compatibility-tested task.
+- Exact requests for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml` previously returned cached pre-deployment 200 responses. Cache-busted requests returned the branded 404. Purge these URLs in Cloudflare or allow their seven-day shared-cache lifetime to expire, then verify again. No dashboard settings were changed in this task.
+- `/work/` is not implemented and correctly resolves to the branded 404 in current output.
+- `npm audit --omit=dev` reports 12 dependency findings (2 moderate, 10 high). Its complete remediation would install breaking Astro/Sharp major versions; handle dependency remediation in a separate compatibility-tested task.
 - Deployment build settings and any account-side redirects or fallback rules remain unverified because they are not versioned in the repository.
 
-## Mobile issues and concerns
+## Mobile status and remaining concerns
 
-- The sticky header can become two rows: the brand and Facebook control remain above a horizontally scrolling navigation row. At narrow widths, `min-width: 280px` on navigation plus nested padding creates a crowded header.
-- Home, Services, Gallery, and 404 are capped by `Layout.astro` at 720px and then padded again by page wrappers where present.
-- Gallery uses a fixed 520px iframe height, which can leave excessive space or crop awkwardly depending on Facebook's rendered content.
-- No explicit reduced-motion rule exists for button hover transforms.
-- A deliberate device-width visual QA pass is still required.
+- Browser QA at 320px, 375px, and 390px confirms the shared shell, header, navigation, buttons, cards, logo, and long contact links do not create horizontal document overflow.
+- Navigation remains visible without horizontal scrolling and each navigation/Facebook control provides a 44px target.
+- CTA groups become full-width below 480px; cards use one column below 900px.
+- Gallery's iframe uses a fluid height between 420px and 520px, but the remote Facebook post can still vary or be blocked by browser privacy controls.
+- Final physical-device checks should include remote font failure, Facebook embed behavior, and browser text scaling.
 
-## Desktop issues and concerns
+## Desktop status and remaining concerns
 
-- Home, Services, and Gallery declare 1100px internal wrappers, but `Layout.astro` caps their parent `main` at 720px.
-- Contact can use a 1100px width because it bypasses `Layout.astro`, creating inconsistent alignment across primary pages.
-- Global `main` CSS and `Layout.astro` scoped `main` CSS duplicate width/padding rules.
-- Repeated page-local hero, card, button, color, spacing, and breakpoint styles make cross-page polish inconsistent.
-- Desktop visual QA remains necessary after structural fixes.
+- Browser QA at 768px, 1024px, and 1280px confirms consistent alignment and no horizontal document overflow.
+- At 1280px and wider, shared inner content reaches 1100px while text introductions remain capped at 70 characters.
+- Header and footer use the same outer shell/gutter basis as page content.
+- The remote Facebook embed is intentionally kept to a narrower readable/media-appropriate panel inside the wider Gallery layout.
 
 ## Missing or unapproved content
 
@@ -74,12 +67,8 @@ Status date: 2026-08-06
 
 ## Technical debt
 
-- Six generic Astro starter JPEGs and `public/favicon.svg` remain tracked but unused because asset deletion requires explicit approval.
-- Atkinson font files remain active even though the approved fonts are Oswald and Inter.
+- Six generic Astro starter JPEGs, `public/favicon.svg`, and two Atkinson WOFF files remain tracked but unused because asset deletion requires explicit approval.
 - Business contact facts and Facebook URLs are repeated across page files rather than centralized.
-- Contact duplicates the document shell instead of using the shared layout.
-- Page-local `:root` blocks contain self-referential custom-property fallbacks such as `--jnd-blue: var(--jnd-blue, ...)`.
-- Brand colors in `global.css` are `#1060A0`, `#105090`, and `#C02020`, not the approved palette.
 - There are no `lint`, `test`, or `check` scripts in `package.json`.
 - Dependency maintenance requires a separately scoped Astro/Sharp upgrade and regression pass.
 - Deployment build settings and fallback configuration are not versioned.
@@ -87,17 +76,15 @@ Status date: 2026-08-06
 
 ## Validation status
 
-- Documentation checkpoint commit `80a4351` was pushed normally to `origin/main` before source work began.
-- The production-correctness build completes without the former Services CSS warning and emits five HTML pages: Home, Services, Gallery, Contact, and `404.html`.
-- Astro Preview returns HTTP 200 for Home and HTTP 404 with the branded page for an unknown local path.
-- The generated sitemap uses `https://justneedsdone.com` and excludes About, Blog, demo posts, RSS, and 404.
-- Generated internal page links, fragments, and local asset references resolve.
-- Source/reference scans find no remaining `example.com`, RSS, MDX, Blog content, generic favicon, or placeholder social-image usage.
-- Production serves the updated favicon, social metadata, Gallery fragment, and sitemap; fresh unknown paths return HTTP 404.
-- The remaining exact legacy-path 200 responses are confirmed stale cache entries rather than files in the current repository or build.
-- No lint or test commands exist to run.
-- Dependency audit findings are recorded above; no automatic or force audit fix was run.
+- The focused Astro production build emits Home, Services, Gallery, Contact, and `404.html` without warnings.
+- Generated output retains the production canonical domain, JND metadata image/favicon, sitemap, Gallery fragment, and top-level 404 document.
+- Browser-based responsive validation covers 320, 375, 390, 768, 1024, and 1280px widths across all current pages.
+- Generated-link validation checked 52 local page, fragment, and asset references with no failures. Each page has one `h1`, no heading-level skip, and four usable primary-navigation links.
+- Keyboard focus checks confirm the skip link, brand link, four navigation links, and Facebook control are native tab stops with a visible red focus outline.
+- Major text/control contrast ratios range from 4.91:1 to 15.86:1; the approved White/Royal Blue pair is 7.29:1 and White/Deep Blue is 12.19:1.
+- Git whitespace and changed-content secret/path scans pass. No credentials, environment values, or private local paths were added.
+- No lint or test commands exist in `package.json`; this is documented rather than hidden.
 
 ## Recommended next task
 
-Purge the Cloudflare cache for `/about/`, `/blog/`, `/blog/first-post/`, and `/rss.xml`—or wait for their advertised seven-day shared-cache lifetime to expire—then confirm each returns the branded page with HTTP 404 without a query string. This is cache cleanup, not a source or routing change. Afterward, plan the dependency major-version upgrade as an isolated compatibility task before responsive or visual redesign.
+Clear or wait out the four documented Cloudflare legacy-route cache entries and confirm the exact URLs now return HTTP 404. After that account-side verification, plan the Astro/Sharp major-version upgrade as a separate compatibility task rather than mixing it with content or Gallery work.

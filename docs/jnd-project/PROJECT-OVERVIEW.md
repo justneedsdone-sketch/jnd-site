@@ -35,7 +35,7 @@ Current production-correctness settings:
 │   ├── components/         Shared head, header, footer, and navigation link
 │   ├── layouts/            Shared JND page layout
 │   ├── pages/              Four business pages plus branded 404
-│   ├── styles/global.css   Global palette, typography, and base styles
+│   ├── styles/global.css   Shared brand, responsive shell, components, and base styles
 │   └── consts.ts           Shared site title and description
 ├── docs/jnd-project/       Project documentation
 ├── AGENTS.md
@@ -60,12 +60,12 @@ The former `/about/`, `/blog/`, five demo-post routes, and `/rss.xml` were remov
 
 ## Shared layouts and components
 
-- `src/layouts/Layout.astro` provides `BaseHead`, `Header`, a slotted `main`, and `Footer` for Home, Services, Gallery, and 404.
-- `src/components/BaseHead.astro` imports global CSS and produces production-domain canonical, Open Graph, and Twitter metadata plus favicon and sitemap links.
+- `src/layouts/Layout.astro` provides `BaseHead`, a skip-to-content link, `Header`, a slotted `main`, and `Footer` for all five current HTML pages.
+- `src/components/BaseHead.astro` imports global CSS, loads the approved Oswald/Inter fonts, and produces production-domain canonical, Open Graph, and Twitter metadata plus favicon and sitemap links.
 - `src/components/Header.astro` provides the JND logo, primary navigation, and inline Facebook icon.
-- `src/components/HeaderLink.astro` calculates active navigation state.
+- `src/components/HeaderLink.astro` calculates active navigation state and exposes it with `aria-current="page"`.
 - `src/components/Footer.astro` provides copyright, tagline, and email.
-- `src/pages/contact.astro` manually assembles `BaseHead`, `Header`, and `Footer` instead of using `Layout.astro`.
+- `src/styles/global.css` provides the approved colors, fonts, approximately 1100px inner content shell, responsive gutters, reusable hero/button/card/panel patterns, keyboard focus, and reduced-motion rules.
 
 ## Major integrations
 
@@ -92,4 +92,4 @@ The supplied tagline (“When you need it done, call Just Needs Done.”), busin
 
 ## Current development status
 
-The site remains the existing JND Astro application. Its four business pages, shared brand shell, contact destinations, Gallery embed, production-domain metadata, valid featured-post fragment, and branded production 404 are functional. Public starter routes and demo RSS/MDX infrastructure are removed from source and current output. Remaining priorities are legacy-URL cache cleanup, dependency major-version maintenance, shared responsive-width correction, mobile/desktop QA, approved palette/typography implementation, accessibility review, and a real consent-aware Gallery workflow. See [Current Status](CURRENT-STATUS.md) and [Next Steps](NEXT-STEPS.md).
+The site remains the existing JND Astro application. Its four business pages, shared responsive brand shell, contact destinations, Gallery embed, production-domain metadata, valid featured-post fragment, and branded production 404 are functional. The 720px cap, mobile navigation crowding, Contact layout difference, repeated visual primitives, and approved palette/typography gaps are corrected. Public starter routes and demo RSS/MDX infrastructure remain absent from source and output. Remaining priorities are legacy-URL cache/settings verification, isolated dependency major-version maintenance, business-fact approval, physical-device accessibility QA, and a real consent-aware Gallery workflow. See [Current Status](CURRENT-STATUS.md) and [Next Steps](NEXT-STEPS.md).

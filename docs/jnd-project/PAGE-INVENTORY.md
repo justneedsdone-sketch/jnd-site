@@ -4,9 +4,9 @@ Inventory updated: 2026-08-06
 
 ## Shared observations
 
-Every current HTML route loads `BaseHead.astro`, global CSS, the shared Header, and the shared Footer either directly or through `Layout.astro`. The shared head emits production-domain canonical and social metadata, uses `public/jnd-logo.png` as the favicon and default social image, and links the generated sitemap. No RSS alternate is advertised because there is no approved feed content.
+Every current HTML route uses `Layout.astro`, which loads `BaseHead.astro`, global CSS, the shared Header, a skip-to-content link, and the shared Footer. The shared head emits production-domain canonical and social metadata, uses `public/jnd-logo.png` as the favicon and default social image, loads Oswald/Inter through Google Fonts, and links the generated sitemap. No RSS alternate is advertised because there is no approved feed content.
 
-Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap prevents the inner 1100px wrappers from expanding on desktop and creates nested padding on mobile. Contact still constructs the page shell directly.
+All pages use one shared responsive shell: a 1164px outer maximum yields approximately 1100px of inner desktop content after the 32px gutters. Gutters fluidly range from 16px to 32px, introductory text is capped at 70 characters, card grids collapse below 900px, the header changes below 760px, and CTA groups stack below 480px.
 
 ## Current HTML pages
 
@@ -16,9 +16,9 @@ Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap preven
 - Purpose: Introduce JND's print/sign services, location, and fastest quote paths.
 - Components/layouts: `Layout.astro` → `BaseHead`, `Header`, `HeaderLink`, `Footer`.
 - Calls to action: Watch promo video; Get a quick quote by email; Contact; See services; Message on Facebook; mapped address; quick-start email.
-- Assets: Shared JND logo/favicon/social image, fonts, and Facebook icon. No local hero or service photographs.
-- Mobile concerns: Nested `main` and `.home` padding narrows content; header becomes a scrolling second row; CTA buttons still need visual QA.
-- Desktop concerns: Intended 1100px `.home` is capped by the 720px layout `main`.
+- Assets: Shared JND logo/favicon/social image, remotely loaded fonts, and Facebook icon. No local hero or service photographs.
+- Mobile concerns: CTA buttons stack below 480px; physical-device text-scaling and blocked-font checks remain useful. Browser checks found no horizontal overflow at 320, 375, or 390px.
+- Desktop concerns: Content reaches approximately 1100px while the introductory paragraph remains limited to 70 characters; no known desktop layout defect remains.
 - Missing/unfinished: Phone is absent; no visual work samples; exact approved tagline/business-name wording needs confirmation.
 - SEO title: `Just Needs Done Enterprises`
 - SEO description: `Print & signs done fast: business cards, yard signs, banners, and more.`
@@ -30,10 +30,10 @@ Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap preven
 - Components/layouts: `Layout.astro` → shared head/header/footer.
 - Calls to action: Get a quick quote at Contact; Message on Facebook; email quick start.
 - Assets: Shared assets only; no service images.
-- Mobile concerns: Grid collapses below 900px; nested padding reduces usable width.
-- Desktop concerns: Three-column grid is capped by the 720px parent; page-local style definitions overlap global variables.
+- Mobile concerns: Grid collapses below 900px and CTA buttons stack below 480px; browser checks found no horizontal overflow at required mobile widths.
+- Desktop concerns: Three-column cards use the shared 1100px inner width; the final wide Button Formats card spans all columns intentionally.
 - Missing/unfinished: No service detail pages, examples, specifications, or approved pricing; do not invent them.
-- Production correction: The `.card h3` rule now has a complete `!important` declaration and closing brace.
+- Structure: Service card headings are `h2`, removing the former `h1` to `h3` hierarchy skip. Shared styles replace the former malformed/page-local card rule.
 - SEO title: `Services | Just Needs Done Enterprises`
 - SEO description: `Business cards, yard signs, banners, window perf, stickers/vinyl, sublimation, and button formats.`
 
@@ -44,8 +44,8 @@ Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap preven
 - Components/layouts: `Layout.astro` → shared head/header/footer; remote Facebook post iframe.
 - Calls to action: Email a photo to feature; Message on Facebook; email submission link.
 - Assets: Remote Facebook embed plus shared assets. No local job photographs.
-- Mobile concerns: Fixed 520px iframe height; nested padding; third-party content may render inconsistently or be blocked by privacy settings.
-- Desktop concerns: The 1100px wrapper remains capped at 720px; the page is mostly status/instruction copy rather than a portfolio.
+- Mobile concerns: The iframe height now scales between 420px and 520px without document overflow; third-party content may still vary or be blocked by privacy settings.
+- Desktop concerns: The page uses the shared wide shell, while the Facebook panel is intentionally limited to 620px because its source embed is configured for 500px content. The page is still mostly status/instruction copy rather than a portfolio.
 - Missing/unfinished: No gallery grid, categories, Work posts, consent/data workflow, or automatic feed.
 - Fragment target: The existing featured-post section is identified as `#featured-post`; Home links directly to it.
 - SEO title: `Gallery | Just Needs Done Enterprises`
@@ -55,11 +55,11 @@ Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap preven
 
 - Source: `src/pages/contact.astro`
 - Purpose: Provide email, physical location, and Facebook contact options.
-- Components/layouts: Direct use of `BaseHead`, `Header`, and `Footer`; does not use `Layout.astro`.
+- Components/layouts: `Layout.astro` → shared head/header/skip link/footer, matching every other current page.
 - Calls to action: Send email; Open in Google Maps; open/message Facebook page.
 - Assets: Shared assets only.
-- Mobile concerns: Three-card grid collapses below 900px; long email/address strings and shared mobile header still need visual QA.
-- Desktop concerns: Uses a 1100px `main`, unlike the 720px cap on other primary pages.
+- Mobile concerns: Three-card grid collapses below 900px; long email/address links wrap without document overflow in required-width browser checks.
+- Desktop concerns: Uses the same approximately 1100px inner shell and card alignment as the other business pages; no known desktop layout difference remains.
 - Missing/unfinished: Phone `815-339-0044` is absent; no business hours; exact business name/tagline is not displayed in the body.
 - SEO title: `Contact | Just Needs Done Enterprises`
 - SEO description: `Contact Just Needs Done Enterprises — fast, clean, affordable print & sign work.`
@@ -71,8 +71,8 @@ Home, Services, Gallery, and 404 use `Layout.astro`; its 720px `main` cap preven
 - Components/layouts: `Layout.astro` → shared head/header/footer.
 - Calls to action: Return home; View services; Contact us; shared navigation/footer.
 - Assets: Shared JND logo/favicon/social image and fonts; no page photograph.
-- Mobile concerns: Actions wrap and remain centered; shared layout/header concerns apply.
-- Desktop concerns: The content is intentionally compact and capped by the shared layout.
+- Mobile concerns: Actions stack below 480px and remain centered without overflow.
+- Desktop concerns: The outer shell is shared; the error card intentionally uses the documented 720px readable inner maximum.
 - Production result: Fresh unknown paths and `/work/` return this branded page with HTTP 404.
 - SEO title: `Page Not Found | Just Needs Done Enterprises`
 - SEO description: `The requested page could not be found.`

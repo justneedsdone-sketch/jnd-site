@@ -10,8 +10,8 @@ Tracked source assets are limited to one JND logo, a generic Astro favicon, two 
 | --- | --- | --- | --- | --- |
 | `public/jnd-logo.png` | PNG, 675×675, 523,512 bytes | Approved circular JND logo containing the JND initials, tagline text, and email | `Header.astro` plus the favicon and default social metadata in `BaseHead.astro`; therefore every current HTML route | Keep. Preserve 1:1 proportions; never recreate when this asset is suitable. |
 | `public/favicon.svg` | SVG, 128×128 viewBox, 749 bytes | Generic black/white Astro starter icon | No current source reference | Retained but unused. Remove only with explicit asset-cleanup approval. |
-| `public/fonts/atkinson-regular.woff` | WOFF, 22,792 bytes | Atkinson regular font | `global.css`; loaded sitewide | Working asset but does not match approved Inter body font. Do not delete until typography migration is approved and verified. |
-| `public/fonts/atkinson-bold.woff` | WOFF, 23,780 bytes | Atkinson bold font | `global.css`; loaded sitewide | Working asset but does not match approved Oswald/Inter plan. Do not delete until typography migration is approved and verified. |
+| `public/fonts/atkinson-regular.woff` | WOFF, 22,792 bytes | Former Atkinson regular font | No current source reference | Retained unused after the approved Inter migration. Do not delete without explicit asset-cleanup approval. |
+| `public/fonts/atkinson-bold.woff` | WOFF, 23,780 bytes | Former Atkinson bold font | No current source reference | Retained unused after the approved Oswald/Inter migration. Do not delete without explicit asset-cleanup approval. |
 
 ## Astro-managed source images
 
@@ -47,7 +47,7 @@ All six files below are 960×480 JPEGs inherited from the Astro starter. They ar
 
 ## Page-to-asset summary
 
-- All HTML pages: JND logo in the header, favicon, and default social metadata; Atkinson fonts; inline Facebook header icon.
+- All HTML pages: JND logo in the header, favicon, and default social metadata; remotely loaded Oswald/Inter fonts; inline Facebook header icon.
 - Home: no page photograph; shared JND logo usage only.
 - Services: no page photograph; shared JND logo usage only.
 - Gallery: remote Facebook embed plus shared assets; no local gallery photographs.

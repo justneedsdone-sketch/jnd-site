@@ -17,7 +17,7 @@ Use `Just Needs Done Enterprises, LLC` when the full legal business name is requ
 
 Red is for controlled emphasis. Do not use it for large paragraphs or large reading surfaces.
 
-The current source uses different blue/red values. Treat those as an implementation discrepancy, not as an approved change to this guide.
+The four approved values are implemented in `src/styles/global.css` as `--jnd-royal-blue`, `--jnd-deep-blue`, `--jnd-red`, and `--jnd-white`. Supporting neutral text, border, surface, and panel colors are also centralized there.
 
 ## Typography
 
@@ -27,7 +27,7 @@ The current source uses different blue/red values. Treat those as an implementat
 - Keep headings readable and avoid forced, distorted, or awkward word wrapping.
 - Do not introduce random or decorative fonts.
 
-The current source loads Atkinson for all text. Oswald and Inter are not currently present in repository assets; adopting them requires a separate, approved implementation task with an appropriate loading/performance approach.
+The current implementation loads Inter weights 400–800 and the used Oswald weight 600 through the Google Fonts CSS API in `BaseHead.astro`. Preconnect hints and `display=swap` keep text visible and reduce connection delay; system sans-serif and Arial Narrow/Arial fallbacks remain available if the remote font request fails. The old Atkinson WOFF files are retained but unused pending explicit asset-cleanup approval.
 
 ## Logo rules
 
@@ -55,10 +55,11 @@ The current source loads Atkinson for all text. Oswald and Inter are not current
 - Use repository content as the working source of truth and obtain approval before resolving factual discrepancies.
 - Use real approved JND photographs and artwork when available; do not substitute generated placeholders for approved assets.
 
-## Current implementation gaps
+## Current implementation
 
-- Current CSS colors do not match the approved four-color palette.
-- Current typography uses Atkinson instead of Oswald/Inter.
-- The generic Astro favicon and social fallback image are not JND-branded.
-- Several sections use pill shapes and rounded cards extensively; any consolidation should be deliberate and approved rather than a broad redesign.
-- Multiple shadows are present; future polish should reduce heavy or unnecessary shadows while preserving useful separation and focus cues.
+- Approved colors and typography are implemented through shared variables and global font families.
+- `public/jnd-logo.png` is used unchanged for the header, favicon reference, and default social metadata image.
+- Page surfaces use restrained 7–10px radii, with the eyebrow label as the only intentionally pill-shaped text treatment.
+- Cards and page surfaces use borders rather than heavy shadows; the sticky header has one subtle separation shadow.
+- Red is limited to selected calls to action, the footer accent, the 404 code, and visible focus cues.
+- All current pages share the same width, spacing, button, card, focus, and reduced-motion rules.

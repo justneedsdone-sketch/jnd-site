@@ -2,6 +2,31 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-08-06 — Use one responsive shell and shared visual primitives
+
+- Decision: Use a shared 1164px outer shell that yields approximately 1100px of inner content at full width, with a fluid 16–32px gutter, 70-character introductory text limit, a 900px card-grid breakpoint, a 760px header breakpoint, and a 480px stacked-CTA breakpoint.
+- Reason: This removes the accidental 720px cap and nested padding while keeping text readable and providing predictable behavior from 320px through wide desktop screens.
+
+## 2026-08-06 — Bring Contact into the shared layout
+
+- Decision: Render Contact through `Layout.astro` like every other current page, without changing its business facts, links, title, or description.
+- Reason: Contact's hand-built document duplicated the shared shell and caused desktop/mobile alignment differences.
+
+## 2026-08-06 — Load approved fonts through Google Fonts
+
+- Decision: Load Inter weights 400–800 and the used Oswald weight 600 through the Google Fonts CSS API using preconnect hints, `display=swap`, and system font fallbacks. Retain the old Atkinson files unused until asset deletion is separately approved.
+- Reason: This implements the explicitly approved typography without adding npm dependencies, recreating font files, or deleting tracked assets; visible fallback text limits the impact of a slow or blocked font request.
+
+## 2026-08-06 — Centralize approved color variables and accessible interaction states
+
+- Decision: Define the four approved colors in `global.css`, use Deep/Royal Blue for structure and primary interaction, reserve Red for selected calls to action, the footer accent, error code, and focus cues, and provide shared focus-visible/reduced-motion behavior.
+- Reason: Central variables prevent page drift, controlled red usage follows the brand guide, and consistent interaction states improve keyboard and motion accessibility.
+
+## 2026-08-06 — Preserve the existing content and logo during responsive polish
+
+- Decision: Keep all business copy, contact destinations, route structure, and the approved logo file unchanged; change only markup semantics and presentation required for responsive/accessibility consistency.
+- Reason: The task authorizes brand/layout alignment but not business-fact normalization, new claims, content redesign, or logo modification.
+
 ## 2026-08-06 — Preserve the existing Astro application
 
 - Decision: Continue from the current Astro repository and architecture; do not initialize, replace, or broadly redesign the site.

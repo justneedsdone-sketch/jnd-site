@@ -10,32 +10,33 @@ const FACEBOOK_URL = "https://www.facebook.com/JustNeedsDone";
 ---
 
 <Layout title={PAGE_TITLE} description={PAGE_DESC}>
-  <section class="wrap">
-    <header class="hero">
-      <span class="tag">Recent work</span>
+  <section class="page-shell">
+    <header class="page-hero">
+      <p class="eyebrow">Recent work</p>
       <h1>Gallery</h1>
-      <p class="sub">
+      <p class="lede">
         We’ll start loading real job photos here as you publish new work posts. Want your job featured?
         Send it over.
       </p>
 
-      <div class="ctaRow">
-        <a class="btn btnPrimary" href={`mailto:${EMAIL}?subject=Gallery%20Feature%20-%20Just%20Needs%20Done`}>
+      <div class="button-row">
+        <a
+          class="button button--primary"
+          href={`mailto:${EMAIL}?subject=Gallery%20Feature%20-%20Just%20Needs%20Done`}
+        >
           Email a photo to feature
         </a>
-        <a class="btn" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+        <a class="button" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
           Message us on Facebook
         </a>
       </div>
     </header>
 
-    <section id="featured-post" class="fb-embed" aria-label="Featured Facebook post">
+    <section id="featured-post" class="content-panel facebook-panel" aria-label="Featured Facebook post">
       <h2>Featured</h2>
       <iframe
         src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FJustNeedsDone%2Fposts%2Fpfbid02DNzm9Y6EHMTjdoqH4GLhxWJeNXkZc6CF1QW2nUNCL78YbV1Hk65nSi29KMc8KnvRl&show_text=true&width=500"
-        style="border:none;overflow:hidden"
         scrolling="no"
-        frameborder="0"
         allowfullscreen="true"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         loading="lazy"
@@ -43,7 +44,7 @@ const FACEBOOK_URL = "https://www.facebook.com/JustNeedsDone";
       ></iframe>
     </section>
 
-    <section class="panel" aria-label="Gallery status">
+    <section class="content-panel" aria-label="Gallery status">
       <h2>Coming next</h2>
       <ul>
         <li>A grid of recent jobs</li>
@@ -55,16 +56,16 @@ const FACEBOOK_URL = "https://www.facebook.com/JustNeedsDone";
       </p>
     </section>
 
-    <section class="tips" aria-label="How to submit">
+    <section class="info-bar" aria-label="How to submit">
       <h2>How to send a job photo</h2>
       <ol>
         <li>Send 1–3 photos</li>
         <li>Add the business name + what we did</li>
         <li>Tell us if it’s OK to post publicly</li>
       </ol>
-      <div class="mini">
+      <div class="email-line">
         <strong>Email:</strong>
-        <a class="link" href={`mailto:${EMAIL}?subject=Gallery%20Feature%20-%20Just%20Needs%20Done`}>
+        <a class="text-link" href={`mailto:${EMAIL}?subject=Gallery%20Feature%20-%20Just%20Needs%20Done`}>
           {EMAIL}
         </a>
       </div>
@@ -73,66 +74,34 @@ const FACEBOOK_URL = "https://www.facebook.com/JustNeedsDone";
 </Layout>
 
 <style>
-  :root{
-    --jnd-blue: var(--jnd-blue, #0b4fb3);
-    --jnd-red: var(--jnd-red, #d62828);
-    --ink:#111827;
-    --muted:#6b7280;
-    --panel:#f3f4f6;
-    --line:#e5e7eb;
+  .facebook-panel {
+    max-width: 620px;
+    margin-inline: auto;
+    scroll-margin-top: 10rem;
   }
 
-  .wrap{max-width:1100px;margin:0 auto;padding:24px;}
-
-  .hero{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
-  .tag{display:inline-block;font-weight:800;color:#fff;background:var(--jnd-blue);padding:6px 10px;border-radius:999px;font-size:13px;}
-  h1{margin:14px 0 10px;color:var(--ink);font-size:42px;line-height:1.1;}
-  .sub{color:var(--muted);font-size:18px;max-width:70ch;margin:0;}
-
-  .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
-  .btn{display:inline-block;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--ink);}
-  .btnPrimary{background:var(--jnd-blue);color:#fff;border-color:transparent;}
-
-  .panel{
-    margin-top:16px;
-    border:1px solid var(--line);
-    border-radius:16px;
-    background:#fff;
-    padding:16px;
-  }
-  .panel h2{margin:0 0 8px;font-size:20px;}
-  .panel ul{margin:0 0 10px 18px;color:var(--ink);}
-  .muted{color:var(--muted);margin:0;}
-
-  /* Facebook embed */
-  .fb-embed{
-    margin-top:16px;
-    border:1px solid var(--line);
-    border-radius:16px;
-    background:#fff;
-    padding:16px;
-  }
-  .fb-embed h2{margin:0 0 10px;font-size:20px;}
-  .fb-embed iframe{
-    width:100%;
-    height:520px;
-    border:0;
-    display:block;
-    border-radius:12px;
+  .content-panel h2,
+  .info-bar h2 {
+    font-size: 1.5rem;
   }
 
-  .tips{
-    margin-top:16px;
-    border:1px solid var(--line);
-    border-radius:16px;
-    background:var(--panel);
-    padding:16px;
+  .content-panel ul,
+  .info-bar ol {
+    margin: 0 0 0.75rem;
+    padding-left: 1.4rem;
   }
-  .tips h2{margin:0 0 8px;font-size:20px;}
-  .tips ol{margin:0 0 12px 18px;color:var(--ink);}
-  .mini{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-  .link{font-weight:900;color:var(--jnd-blue);text-decoration:none;}
-  .link:hover{text-decoration:underline;text-underline-offset:3px;}
 
-  @media (max-width: 900px){ h1{font-size:34px;} }
+  .facebook-panel iframe {
+    display: block;
+    width: 100%;
+    height: clamp(420px, 52vw, 520px);
+    border: 0;
+  }
+
+  .email-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
 </style>

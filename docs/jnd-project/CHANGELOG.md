@@ -2,6 +2,30 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-08-06 — Responsive layout and approved brand alignment
+
+### Changed
+
+- Removed the duplicated 720px `main` cap and introduced one shared shell with approximately 1100px of inner desktop content, fluid 16–32px gutters, and 70-character reading widths for introductions.
+- Consolidated the existing hero, button, card, panel, information-bar, color, spacing, and responsive patterns in `global.css` while retaining only focused page-local rules.
+- Moved Contact onto `Layout.astro` without changing its business content, destinations, or metadata.
+- Reworked the header into a single desktop row and a two-row mobile layout with four equal, non-scrolling navigation targets.
+- Updated Gallery's Facebook iframe from a fixed 520px height to a constrained fluid height and a media-appropriate inner width.
+- Corrected the Services heading hierarchy from skipped `h3` headings to `h2` headings.
+
+### Brand and accessibility
+
+- Implemented the approved Royal Blue, Deep Blue, Red, and White values as shared CSS custom properties.
+- Replaced Atkinson usage with Oswald headings and Inter body copy, loaded through the Google Fonts CSS API with preconnect hints, `display=swap`, and system fallbacks.
+- Preserved `public/jnd-logo.png` unchanged and proportionally sized.
+- Added a skip link, `aria-current` active navigation state, strong focus-visible outlines, 44px controls, restrained red emphasis, and reduced-motion behavior.
+
+### Validated
+
+- Built the five-page static site without Astro warnings.
+- Checked responsive layouts at 320, 375, 390, 768, 1024, and 1280px with no document-level horizontal overflow.
+- Preserved production metadata, sitemap, canonical URLs, Gallery fragment, and branded 404 output.
+
 ## 2026-08-06 — Production-correctness pass
 
 ### Corrected
