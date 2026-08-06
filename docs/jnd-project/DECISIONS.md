@@ -36,3 +36,23 @@ Record durable technical, design, content, and process decisions here. Never sil
 
 - Decision: Recommend metadata, malformed CSS, fragment navigation, public demo-route, and 404 behavior corrections before broad responsive or visual polish.
 - Reason: These defects affect correctness, credibility, accessibility, and search behavior and can be addressed in a focused pass.
+
+## 2026-08-06 — Retire unapproved starter publishing routes
+
+- Decision: Remove the starter About, Blog, demo posts, RSS endpoint, and their route-only infrastructure instead of presenting or inventing JND business content.
+- Reason: The owner explicitly prohibited public Astro starter content and invented business claims. No approved About or editorial content exists to replace it.
+
+## 2026-08-06 — Use the existing approved logo for metadata
+
+- Decision: Reuse `public/jnd-logo.png` unchanged as the favicon reference and default Open Graph/Twitter image; retain the old SVG and starter JPEGs as unused files pending asset-cleanup approval.
+- Reason: The approved logo already exists in the tracked repository, preserves its original proportions, and avoids generating or recreating brand artwork.
+
+## 2026-08-06 — Let static output provide Cloudflare's 404 signal
+
+- Decision: Add `src/pages/404.astro` so Astro emits top-level `404.html`; do not add a catch-all rewrite or change Cloudflare account settings in this pass.
+- Reason: Cloudflare Pages documents that a top-level `404.html` disables its automatic SPA fallback and is served for unmatched static routes. The repository contains no tracked fallback configuration.
+
+## 2026-08-06 — Defer dependency major-version remediation
+
+- Decision: Record the current npm audit findings and defer Astro/Sharp major upgrades to a separately reviewed task.
+- Reason: The audit requires major-version updates with broader compatibility risk, which exceeds this focused production-correctness pass.

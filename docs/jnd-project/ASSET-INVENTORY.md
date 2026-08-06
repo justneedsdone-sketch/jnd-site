@@ -8,8 +8,8 @@ Tracked source assets are limited to one JND logo, a generic Astro favicon, two 
 
 | File | Type and dimensions | Description | Used by | Status |
 | --- | --- | --- | --- | --- |
-| `public/jnd-logo.png` | PNG, 675×675, 523,512 bytes | Approved circular JND logo containing the JND initials, tagline text, and email | `Header.astro`; therefore every current HTML route | Keep. Preserve 1:1 proportions; never recreate when this asset is suitable. |
-| `public/favicon.svg` | SVG, 128×128 viewBox, 749 bytes | Generic black/white Astro starter icon | `BaseHead.astro`; therefore every current HTML route | Clear but not JND-branded. Replace only when an approved favicon asset is supplied or an approved derivation is authorized. |
+| `public/jnd-logo.png` | PNG, 675×675, 523,512 bytes | Approved circular JND logo containing the JND initials, tagline text, and email | `Header.astro` plus the favicon and default social metadata in `BaseHead.astro`; therefore every current HTML route | Keep. Preserve 1:1 proportions; never recreate when this asset is suitable. |
+| `public/favicon.svg` | SVG, 128×128 viewBox, 749 bytes | Generic black/white Astro starter icon | No current source reference | Retained but unused. Remove only with explicit asset-cleanup approval. |
 | `public/fonts/atkinson-regular.woff` | WOFF, 22,792 bytes | Atkinson regular font | `global.css`; loaded sitewide | Working asset but does not match approved Inter body font. Do not delete until typography migration is approved and verified. |
 | `public/fonts/atkinson-bold.woff` | WOFF, 23,780 bytes | Atkinson bold font | `global.css`; loaded sitewide | Working asset but does not match approved Oswald/Inter plan. Do not delete until typography migration is approved and verified. |
 
@@ -19,12 +19,12 @@ All six files below are 960×480 JPEGs inherited from the Astro starter. They ar
 
 | File | Size | Visual/content | Used by | Status |
 | --- | ---: | --- | --- | --- |
-| `src/assets/blog-placeholder-1.jpg` | 32,040 bytes | Astro “Build the web you want” graphic | Default social image in `BaseHead.astro`; Markdown Style Guide hero | Misleading as JND social artwork; retain until an approved replacement and demo-content decision are made. |
-| `src/assets/blog-placeholder-2.jpg` | 33,136 bytes | Abstract blue/green gradient texture | Third Post hero | Starter content. |
-| `src/assets/blog-placeholder-3.jpg` | 28,687 bytes | Abstract magenta/blue gradient texture | First Post hero | Starter content. |
-| `src/assets/blog-placeholder-4.jpg` | 38,690 bytes | Abstract yellow/green gradient texture | Second Post hero | Starter content. |
-| `src/assets/blog-placeholder-5.jpg` | 34,890 bytes | Abstract blue/purple gradient texture | Using MDX hero | Starter content. |
-| `src/assets/blog-placeholder-about.jpg` | 21,606 bytes | Astro face/icon graphic | About hero; inline example image in Markdown Style Guide | Starter content. |
+| `src/assets/blog-placeholder-1.jpg` | 32,040 bytes | Astro “Build the web you want” graphic | No current source reference | Retained unused starter asset pending explicit cleanup approval. |
+| `src/assets/blog-placeholder-2.jpg` | 33,136 bytes | Abstract blue/green gradient texture | No current source reference | Retained unused starter asset pending explicit cleanup approval. |
+| `src/assets/blog-placeholder-3.jpg` | 28,687 bytes | Abstract magenta/blue gradient texture | No current source reference | Retained unused starter asset pending explicit cleanup approval. |
+| `src/assets/blog-placeholder-4.jpg` | 38,690 bytes | Abstract yellow/green gradient texture | No current source reference | Retained unused starter asset pending explicit cleanup approval. |
+| `src/assets/blog-placeholder-5.jpg` | 34,890 bytes | Abstract blue/purple gradient texture | No current source reference | Retained unused starter asset pending explicit cleanup approval. |
+| `src/assets/blog-placeholder-about.jpg` | 21,606 bytes | Astro face/icon graphic | No current source reference | Retained unused starter asset pending explicit cleanup approval. |
 
 ## Icons and embeds not stored as files
 
@@ -47,12 +47,9 @@ All six files below are 960×480 JPEGs inherited from the Astro starter. They ar
 
 ## Page-to-asset summary
 
-- All HTML pages: JND header logo, generic favicon, Atkinson fonts, inline Facebook header icon, generic placeholder social image.
-- Home: no page photograph; JND logo only through shared header.
-- Services: no page photograph; JND logo only through shared header.
+- All HTML pages: JND logo in the header, favicon, and default social metadata; Atkinson fonts; inline Facebook header icon.
+- Home: no page photograph; shared JND logo usage only.
+- Services: no page photograph; shared JND logo usage only.
 - Gallery: remote Facebook embed plus shared assets; no local gallery photographs.
 - Contact: no page photograph; shared assets.
-- About: `blog-placeholder-about.jpg` as hero.
-- Blog index: each post's placeholder hero.
-- Individual blog pages: the matching placeholder hero listed above.
-- Markdown Style Guide: `blog-placeholder-1.jpg` hero and `blog-placeholder-about.jpg` inline example.
+- 404: no page photograph; shared assets.

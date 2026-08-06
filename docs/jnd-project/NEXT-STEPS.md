@@ -4,11 +4,12 @@ This checklist is a proposal. Items that change public content, business facts, 
 
 ## Critical
 
-- [ ] Fix the malformed `.card h3` CSS rule in `src/pages/services.astro`, then verify card text and breakpoints.
-- [ ] Change Astro's `site` value from `https://example.com` to the approved production URL and verify canonical, Open Graph, Twitter, RSS, and sitemap output.
-- [ ] Add or correct the Gallery `#featured` target used by the Home promo button.
-- [ ] Decide whether public `/about/`, `/blog/`, sample post, RSS, and MDX content should be removed, unpublished, redirected, or replaced; do not assume the decision.
-- [ ] Verify and correct the Cloudflare unknown-route/404 fallback so nonexistent URLs do not return the Home page with HTTP 200.
+- [x] Fix the malformed `.card h3` CSS rule in `src/pages/services.astro`, then verify the production build is warning-free.
+- [x] Change Astro's `site` value to `https://justneedsdone.com` and verify canonical, Open Graph, Twitter, and sitemap output.
+- [x] Connect the Home Gallery button to the existing featured Facebook post.
+- [x] Remove the unapproved About, Blog, demo-post, RSS, and MDX routes/infrastructure without inventing replacement content.
+- [x] Add a top-level generated `404.html` through `src/pages/404.astro` so Cloudflare Pages can stop treating the site as an SPA.
+- [ ] After the deployment completes, verify an unknown production URL returns the branded page with HTTP 404 rather than Home with HTTP 200. If it does not, confirm `main`, the Astro build command, `dist` output, and absence of Worker/redirect/SPA rewrite rules in Cloudflare.
 - [ ] Confirm the production branch, build command, output directory, and fallback rules in the connected Cloudflare account, then document them without changing deployment configuration.
 
 ## High
@@ -18,7 +19,7 @@ This checklist is a proposal. Items that change public content, business facts, 
 - [ ] Resolve the shared 720px `main` cap and nested wrapper padding so Home, Services, Gallery, and Contact align consistently on desktop and remain readable on mobile.
 - [ ] Perform a page-by-page responsive QA pass at narrow mobile, wide mobile, tablet, laptop, and desktop sizes.
 - [ ] Centralize repeated business contact values and repeated page-shell behavior without broad formatting changes.
-- [ ] Replace the generic Open Graph image and Astro favicon only with approved JND assets or an owner-approved derivation.
+- [x] Replace the generic Open Graph image and Astro favicon references with the existing approved JND logo, unchanged.
 - [ ] Add meaningful alternative text where images convey content and confirm the decorative treatment where they do not.
 
 ## Medium
@@ -34,15 +35,15 @@ This checklist is a proposal. Items that change public content, business facts, 
 ## Later
 
 - [ ] Organize assets into clearer categories after all public route/content decisions are approved; preserve Git history and do not delete originals prematurely.
-- [ ] Decide whether a JND blog/news capability is genuinely needed before retaining MDX, RSS, the content collection, and template-specific dependencies.
+- [ ] Reintroduce a JND blog/news capability only if the business approves real content and a maintainable publishing need.
 - [ ] Add analytics or conversion tracking only with an explicit privacy and business requirement.
 - [ ] Review structured data and local-business SEO after contact facts and public content are approved.
 - [ ] Establish a documented production release checklist and rollback process.
 
 ## Proposed next five development tasks
 
-1. Production correctness: Services CSS, real Astro `site` URL, Gallery fragment, and repeatable build validation.
-2. Public route/content cleanup: owner decision and implementation for About, Blog, RSS, sample posts, and Cloudflare 404 behavior.
-3. Responsive structure: shared main-width/padding correction plus mobile/desktop header and page QA.
-4. Brand implementation: approved colors, Oswald/Inter, restrained shapes/shadows, approved favicon/social image, and accessibility checks.
-5. Gallery workflow: real approved job media, consent-aware content structure, categories, and a maintainable publishing process.
+1. Production verification: confirm the deployed 404 status and Cloudflare build settings after this commit reaches production.
+2. Dependency maintenance: plan and test the required Astro/Sharp major upgrades in an isolated, reviewable task.
+3. Responsive structure: correct the shared main-width/padding constraint and complete mobile/desktop page QA.
+4. Brand implementation: apply approved colors and Oswald/Inter through a focused, accessible typography/palette task.
+5. Gallery workflow: add only real approved job media with consent-aware content, categories, and a maintainable publishing process.

@@ -2,6 +2,30 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-08-06 — Production-correctness pass
+
+### Corrected
+
+- Repaired the malformed Services card-heading CSS rule.
+- Set Astro's production site URL to `https://justneedsdone.com`.
+- Connected the Home promo button to the existing featured Facebook post on Gallery.
+- Added a branded Astro `404.astro` page, which builds to top-level `404.html` for Cloudflare Pages not-found handling.
+- Replaced the generic social fallback and favicon reference with the existing approved `public/jnd-logo.png` asset.
+
+### Removed from public output
+
+- Removed the unapproved starter About page, Blog index, five demo posts, dynamic Blog route, and demo-only RSS endpoint.
+- Removed the now-unused blog content schema, Blog layout, date component, MDX integration, RSS integration, and their direct package dependencies.
+- Preserved the six starter JPEGs and generic SVG favicon as unused tracked assets pending explicit asset-cleanup approval.
+
+### Validated
+
+- Confirmed the focused build emits five HTML pages: Home, Services, Gallery, Contact, and `404.html`.
+- Confirmed Astro Preview serves Home with HTTP 200 and an unknown path with the branded page and HTTP 404.
+- Confirmed the sitemap uses the production domain and excludes the retired starter routes.
+- Confirmed no source references remain to `example.com`, RSS, MDX, Blog content, the generic social image, or the generic favicon.
+- Recorded dependency-audit findings without performing an out-of-scope major framework upgrade.
+
 ## 2026-08-06 — Project documentation baseline
 
 ### Added
