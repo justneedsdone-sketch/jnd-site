@@ -1,81 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { SITE_TITLE } from "../consts";
-
-const PAGE_TITLE = `${SITE_TITLE}`;
-const PAGE_DESC = "Print & signs done fast: business cards, yard signs, banners, and more.";
-
-const EMAIL = "Just.Needs.Done@gmail.com";
-const SUBJECT = "Quote Request - Just Needs Done";
-const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}`;
-
-const FB_URL = "https://www.facebook.com/JustNeedsDone";
-const ADDRESS_TEXT = "511 1st St., LaSalle, IL 61301 (Located inside of Whatnots & More)";
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=511%201st%20St%2C%20LaSalle%2C%20IL%2061301";
+import { services } from "../data/site";
 ---
-
-<Layout title={PAGE_TITLE} description={PAGE_DESC}>
-	<section class="page-shell home">
-		<div class="page-hero">
-			<p class="eyebrow">When you just need it done</p>
-			<h1>Print &amp; signs that make you look legit.</h1>
-			<p class="lede">
-				Business cards, yard signs, banners, and more — made fast, clean, and affordable for small businesses,
-				nonprofits, and the public.
-			</p>
-			<p class="location">
-				<a class="text-link" href={MAPS_URL} target="_blank" rel="noopener noreferrer">{ADDRESS_TEXT}</a>
-			</p>
-
-			<div class="promo" aria-label="Promo video">
-				<a class="button button--emphasis button--wide" href="/gallery/#featured-post">Watch our promo video</a>
-			</div>
-
-			<div class="button-row" aria-label="Primary actions">
-				<a class="button button--primary" href={MAILTO}>Get a quick quote</a>
-				<a class="button button--emphasis" href="/contact/">Contact</a>
-				<a class="button" href="/services/">See services</a>
-				<a class="button" href={FB_URL} target="_blank" rel="noopener noreferrer">Message on Facebook</a>
-			</div>
-
-			<div class="card-grid" aria-label="Top services">
-				<article class="content-card">
-					<h2>Business Cards</h2>
-					<p>Clean, professional cards that help you close.</p>
-				</article>
-				<article class="content-card">
-					<h2>Yard Signs</h2>
-					<p>Fast turnaround, bold and readable from the road.</p>
-				</article>
-				<article class="content-card">
-					<h2>Banners</h2>
-					<p>Big impact for events, storefronts, and promotions.</p>
-				</article>
-			</div>
-
-			<div class="info-bar" aria-label="Quick start">
-				<strong>Quick start:</strong>
-				Email <a class="text-link" href={MAILTO}>{EMAIL}</a> with what you need + size + quantity + deadline.
-			</div>
-		</div>
+<Layout title="Just Needs Done" description="Local printing, signs, apparel, and custom products in LaSalle, Illinois.">
+	<section class="hero"><div class="hero-wave hero-wave-one"></div><div class="hero-wave hero-wave-two"></div>
+		<div class="hero-copy"><img class="hero-logo" src="/assets/jnd-primary-logo.png" alt="Just Needs Done"/><p class="eyebrow">WHEN YOU JUST NEED IT DONE</p><h1>Your local print, sign &amp; custom product partner.</h1><p class="hero-lede">From business essentials to bold displays, we help local businesses, organizations and families turn ideas into finished work.</p><div class="hero-actions"><a class="button button-red" href="tel:+18153390044">Call 815-339-0044</a><a class="button button-blue" href="mailto:Just.Needs.Done@gmail.com?subject=Website%20quote%20request">Get a quote</a><a class="button button-white" href="/services">Explore services</a></div><p class="tagline-support">When you just need it done &mdash; call Just Needs Done!</p></div>
+		<div class="hero-visual"><img src="/assets/hero-storefront-transformation.jpg" alt="Corner Oasis storefront transformation from old window graphics to a new finished design"/><div class="photo-note"><span>REAL JND WORK</span><strong>Storefront transformation from old to new.</strong></div></div>
 	</section>
-
-	<style>
-		.location {
-			max-width: var(--jnd-reading-max);
-			margin: 0.85rem 0 0;
-		}
-
-		.promo {
-			margin-top: 1rem;
-		}
-
-		.content-card h2 {
-			font-size: 1.35rem;
-		}
-
-		.content-card p {
-			margin: 0;
-		}
-	</style>
+	<section class="home-overview"><div class="section-heading"><p class="eyebrow">START HERE</p><h2>What do you need done?</h2><p>Choose a clear next step, or call and we&rsquo;ll point you in the right direction.</p></div><div class="overview-grid">{services.map((service) => <a class="overview-card" href="/services"><img src={service.image} alt=""/><span>{service.kicker}</span><h3>{service.title}</h3><strong>View services &rarr;</strong></a>)}<a class="overview-card overview-visit" href="/visit"><img src="/assets/whatnots-and-more-address.png" alt="Whatnots and More"/><span>INSIDE WHATNOTS AND MORE</span><h3>Visit the shop</h3><strong>Hours &amp; directions &rarr;</strong></a></div></section>
+	<section class="home-cta"><p class="eyebrow">REAL WORK. LOCAL HELP.</p><h2>See what we&rsquo;ve been making.</h2><p>Browse approved photos of recent JND print, sign, apparel and custom-product work.</p><a class="button button-blue" href="/our-work">View our work</a></section>
 </Layout>

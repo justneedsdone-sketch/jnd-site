@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { gallery } from "../data/site";
+---
+<Layout title="Our Work | Just Needs Done" description="A gallery of real print, sign, apparel, promotional, and custom-product work from Just Needs Done.">
+	<section class="page-intro"><p class="eyebrow">MADE HERE. MADE FOR REAL PEOPLE.</p><h1>Our Work</h1><p>Approved individual project photos collected from the JND brochure set. Select any image to open the clearest available full-size version.</p></section>
+	<section class="gallery-section"><div class="gallery-grid">{gallery.map(([file, category, caption]) => <figure class="gallery-card"><a href={`/assets/gallery/${file}`} target="_blank" rel="noreferrer"><img src={`/assets/gallery/${file}`} alt={`${caption}, produced by Just Needs Done`}/><span class="view-label">View full image</span></a><figcaption><span>{category}</span><strong>{caption}</strong></figcaption></figure>)}</div><div class="center-action"><a class="button button-blue" href="https://facebook.com/JustNeedsDone" target="_blank" rel="noreferrer">See more on Facebook</a><a class="button button-red" href="mailto:Just.Needs.Done@gmail.com?subject=Project%20quote%20request">Ask about your project</a></div></section>
+</Layout>
