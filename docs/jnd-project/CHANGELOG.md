@@ -7,6 +7,7 @@ Meaningful project changes should be recorded here in reverse chronological orde
 ### Corrected
 
 - Corrected six Our Work descriptions to accurately identify the memorial banner, magnet, printed flyers, custom T-shirt, sublimated event towel, and DTF company polo.
+- Corrected the Geneva Equipment project description to identify it as an 8′ × 20′ large-format banner rather than a floor graphic.
 - Replaced the incorrect event-towel gallery photo with the approved white sublimated towel photo supplied by the owner.
 
 ## 2026-08-06 — Responsive layout and approved brand alignment

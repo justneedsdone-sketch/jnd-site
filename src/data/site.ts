@@ -5,7 +5,7 @@ export const services = [
 ];
 
 export const gallery = [
-  ["01-img-001.jpg","Signage","Community yard-sign display"],["01-img-008.jpg","Print","Habitat for Humanity printed materials"],["01-img-009.jpg","Signage","Large-format floor graphic"],["01-img-010.jpg","Custom Products","Personalized character mugs"],
+  ["01-img-001.jpg","Signage","Community yard-sign display"],["01-img-008.jpg","Print","Habitat for Humanity printed materials"],["01-img-009.jpg","Signage","8′ × 20′ large-format banner"],["01-img-010.jpg","Custom Products","Personalized character mugs"],
   ["02-img-001.jpg","Print","Coordinated service brochures"],["02-img-008.jpg","Print","Full-color business cards"],["02-img-009.jpg","Print","Printed menu"],["02-img-010.jpg","Print","Folded informational brochure"],
   ["03-img-001.jpg","Signage","Stuff the Bus event signs"],["03-img-008.jpg","Signage","Stuff the Bus yard sign"],["03-img-009.jpg","Signage","Norway Cruise Night banner"],["03-img-010.jpg","Signage","Wired Solutions sign panel"],
   ["04-img-001.jpg","Signage","Storefront window graphics"],["04-img-008.jpg","Signage","Corner Oasis storefront transformation"],["04-img-009.jpg","Signage","Vehicle lettering and graphics"],["04-img-010.jpg","Signage","Custom vinyl decal sheet"],
