@@ -2,6 +2,13 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-08-29 — Our Work corrections
+
+### Corrected
+
+- Corrected six Our Work descriptions to accurately identify the memorial banner, magnet, printed flyers, custom T-shirt, sublimated event towel, and DTF company polo.
+- Replaced the incorrect event-towel gallery photo with the approved white sublimated towel photo supplied by the owner.
+
 ## 2026-08-06 — Responsive layout and approved brand alignment
 
 ### Changed
