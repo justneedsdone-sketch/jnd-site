@@ -2,6 +2,14 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-09-05 — Privacy-friendly analytics
+
+### Added
+
+- Added site-wide page-view, referral, device-category, campaign, link-click, and contact-click measurement.
+- Kept analytics invisible to visitors and excluded names, telephone numbers, email addresses, full referrer URLs, and IP addresses from the stored event data.
+- Analytics respects the browser's Do Not Track setting and begins collecting only after this deployment.
+
 ## 2026-08-29 — Our Work corrections
 
 ### Corrected

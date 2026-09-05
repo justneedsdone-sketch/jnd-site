@@ -32,7 +32,7 @@ This checklist is a proposal. Items that change public content, business facts, 
 - [ ] Organize assets after public route/content decisions are approved; preserve Git history and do not delete originals prematurely.
 - [ ] Remove the unused starter images, generic SVG favicon, and Atkinson font files only with explicit asset-cleanup approval.
 - [ ] Reintroduce a JND blog/news capability only if the business approves real content and a maintainable publishing need.
-- [ ] Add analytics or conversion tracking only with an explicit privacy and business requirement.
+- [x] Add privacy-friendly analytics after the owner explicitly approved the business requirement.
 - [ ] Establish a documented production release checklist and rollback process.
 
 ## Proposed next five development tasks

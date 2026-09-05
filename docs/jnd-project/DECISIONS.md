@@ -2,6 +2,11 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-09-05 — Include privacy-friendly analytics
+
+- Decision: Measure page views, approximate sessions, referral hostnames, device categories, campaign parameters, and link/contact clicks without changing the visible design or storing direct contact information, full referrer URLs, or IP addresses.
+- Reason: The owner explicitly requested analytics for the live site and established analytics as a default requirement for future websites.
+
 ## 2026-08-06 — Use one responsive shell and shared visual primitives
 
 - Decision: Use a shared 1164px outer shell that yields approximately 1100px of inner content at full width, with a fluid 16–32px gutter, 70-character introductory text limit, a 900px card-grid breakpoint, a 760px header breakpoint, and a 480px stacked-CTA breakpoint.
