@@ -9,6 +9,7 @@ Meaningful project changes should be recorded here in reverse chronological orde
 - Added site-wide page-view, referral, device-category, campaign, link-click, and contact-click measurement.
 - Kept analytics invisible to visitors and excluded names, telephone numbers, email addresses, full referrer URLs, and IP addresses from the stored event data.
 - Analytics respects the browser's Do Not Track setting and begins collecting only after this deployment.
+- Added a shared owner opt-out cookie so approved devices can be excluded across the JND, Whatnots & More, and Karing for Kids websites.
 
 ## 2026-08-29 — Our Work corrections
 

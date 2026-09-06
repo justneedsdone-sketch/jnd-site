@@ -6,6 +6,7 @@ Record durable technical, design, content, and process decisions here. Never sil
 
 - Decision: Measure page views, approximate sessions, referral hostnames, device categories, campaign parameters, and link/contact clicks without changing the visible design or storing direct contact information, full referrer URLs, or IP addresses.
 - Reason: The owner explicitly requested analytics for the live site and established analytics as a default requirement for future websites.
+- Decision: Honor the shared `jnd_analytics_opt_out` cookie before recording any event, allowing the owner's browsers to be excluded without IP-address tracking or device fingerprinting.
 
 ## 2026-08-06 — Use one responsive shell and shared visual primitives
 

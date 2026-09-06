@@ -21,6 +21,12 @@
     return "desktop";
   }
 
+  function isOptedOut() {
+    return document.cookie.split(";").some(function (cookie) {
+      return cookie.trim() === "jnd_analytics_opt_out=1";
+    });
+  }
+
   function safeTarget(link) {
     var href = link.getAttribute("href") || "";
     if (href.indexOf("tel:") === 0) return "business-telephone";
@@ -36,7 +42,7 @@
   }
 
   function send(eventType, target) {
-    if (navigator.doNotTrack === "1") return;
+    if (navigator.doNotTrack === "1" || isOptedOut()) return;
 
     var url = new URL(window.location.href);
     var referrerHost;
