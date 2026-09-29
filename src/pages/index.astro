@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { services } from "../data/site";
+import { services, websites } from "../data/site";
 ---
 <Layout title="Just Needs Done" description="Local printing, signs, apparel, and custom products in LaSalle, Illinois.">
 	<section class="hero"><div class="hero-wave hero-wave-one"></div><div class="hero-wave hero-wave-two"></div>
@@ -8,5 +8,6 @@ import { services } from "../data/site";
 		<div class="hero-visual"><img src="/assets/hero-storefront-transformation.jpg" alt="Corner Oasis storefront transformation from old window graphics to a new finished design"/><div class="photo-note"><span>REAL JND WORK</span><strong>Storefront transformation from old to new.</strong></div></div>
 	</section>
 	<section class="home-overview"><div class="section-heading"><p class="eyebrow">START HERE</p><h2>What do you need done?</h2><p>Choose a clear next step, or call and we&rsquo;ll point you in the right direction.</p></div><div class="overview-grid">{services.map((service) => <a class="overview-card" href="/services"><img src={service.image} alt=""/><span>{service.kicker}</span><h3>{service.title}</h3><strong>View services &rarr;</strong></a>)}<a class="overview-card overview-visit" href="/visit"><img src="/assets/whatnots-and-more-address.png" alt="Whatnots and More"/><span>INSIDE WHATNOTS AND MORE</span><h3>Visit the shop</h3><strong>Hours &amp; directions &rarr;</strong></a></div></section>
+	<section class="home-websites"><div class="section-heading"><p class="eyebrow light">WEBSITES BY JUST NEEDS DONE</p><h2>Local ideas, built for the web.</h2><p>We design and support clear, practical websites for local businesses, organizations and community events.</p></div><div class="website-preview-grid">{websites.map((site) => <a class="website-preview" href={site.url} target="_blank" rel="noreferrer"><div class={`website-preview-art ${site.theme}`}><img src={site.image} alt="" /></div><span>{site.type}</span><h3>{site.name}</h3><strong>Visit website <span aria-hidden="true">↗</span></strong></a>)}</div><div class="center-action"><a class="button button-white" href="/websites">View website portfolio</a></div></section>
 	<section class="home-cta"><p class="eyebrow">REAL WORK. LOCAL HELP.</p><h2>See what we&rsquo;ve been making.</h2><p>Browse approved photos of recent JND print, sign, apparel and custom-product work.</p><a class="button button-blue" href="/our-work">View our work</a></section>
 </Layout>

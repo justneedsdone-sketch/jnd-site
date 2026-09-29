@@ -33,6 +33,13 @@ All six files below are 960×480 JPEGs inherited from the Astro starter. They ar
 
 ## Backgrounds, photographs, QR codes, and downloads
 
+### Website portfolio identity artwork
+
+- `public/assets/websites/whatnots-and-more.webp` — public Whatnots & More Vendor Mall identity artwork.
+- `public/assets/websites/lba-events.webp` — public La Salle Business Association identity artwork.
+- `public/assets/websites/karing-for-kids.webp` — public Huck’s Karing for Kids identity artwork.
+- These files support the curated Home and `/websites/` portfolio cards. Preserve their proportions and do not recolor or recreate them.
+
 - No JND-specific background image is stored in `public/` or `src/assets/`.
 - No real JND job photograph is stored in the repository.
 - No QR code is present.

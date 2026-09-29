@@ -10,10 +10,22 @@ All pages use one shared responsive shell: a 1164px outer maximum yields approxi
 
 ## Current HTML pages
 
+### `/websites/` — Websites
+
+- Source: `src/pages/websites.astro`
+- Purpose: Showcase confirmed public websites designed and supported by Just Needs Done and provide a website-design inquiry path.
+- Content source: The curated `websites` collection in `src/data/site.ts`.
+- Initial projects: Whatnots & More, LBA Event Weekend, and Huck’s Karing for Kids.
+- Privacy rule: Do not automatically list subdomains, previews, administrative tools, or unfinished work.
+- Calls to action: Open each live project; email Just Needs Done about a website.
+- Assets: Three public project identity images under `public/assets/websites/` plus shared JND assets.
+- SEO title: `Websites | Just Needs Done`
+- SEO description: `Websites designed and supported by Just Needs Done for local businesses, organizations and community events.`
+
 ### `/` — Home
 
 - Source: `src/pages/index.astro`
-- Purpose: Introduce JND's print/sign services, location, and fastest quote paths.
+- Purpose: Introduce JND's print/sign services, website work, location, and fastest quote paths.
 - Components/layouts: `Layout.astro` → `BaseHead`, `Header`, `HeaderLink`, `Footer`.
 - Calls to action: Watch promo video; Get a quick quote by email; Contact; See services; Message on Facebook; mapped address; quick-start email.
 - Assets: Shared JND logo/favicon/social image, remotely loaded fonts, and Facebook icon. No local hero or service photographs.

@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { websites } from "../data/site";
+---
+
+<Layout title="Websites | Just Needs Done" description="Websites designed and supported by Just Needs Done for local businesses, organizations and community events.">
+	<section class="page-intro website-intro">
+		<p class="eyebrow">WEBSITES BY JUST NEEDS DONE</p>
+		<h1>Local websites, made simple.</h1>
+		<p>We help businesses, organizations and community events create a clear online home that works well on phones, tablets and computers.</p>
+	</section>
+
+	<section class="website-portfolio" aria-labelledby="website-portfolio-heading">
+		<div class="section-heading website-heading">
+			<p class="eyebrow">LIVE PROJECTS</p>
+			<h2 id="website-portfolio-heading">Explore our website work.</h2>
+			<p>Every site below is public and currently supported by Just Needs Done. Select a project to open the live website.</p>
+		</div>
+		<div class="website-grid">
+			{websites.map((site) => (
+				<article class="website-card">
+					<a class={`website-card-art ${site.theme}`} href={site.url} target="_blank" rel="noreferrer" aria-label={`Visit ${site.name} website`}>
+						<img src={site.image} alt={site.alt} />
+						<span>View live website <span aria-hidden="true">↗</span></span>
+					</a>
+					<div class="website-card-copy">
+						<p class="website-type">{site.type}</p>
+						<h2>{site.name}</h2>
+						<p>{site.description}</p>
+						<a class="website-link" href={site.url} target="_blank" rel="noreferrer">Visit website <span aria-hidden="true">↗</span></a>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="website-cta">
+		<div>
+			<p class="eyebrow light">NEED A WEBSITE?</p>
+			<h2>Let&rsquo;s give your business or event a clear place online.</h2>
+			<p>Tell us what you need the website to accomplish, and we&rsquo;ll help you choose a practical next step.</p>
+		</div>
+		<a class="button button-red" href="mailto:Just.Needs.Done@gmail.com?subject=Website%20design%20quote%20request">Ask about a website</a>
+	</section>
+</Layout>

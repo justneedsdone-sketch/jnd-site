@@ -2,6 +2,21 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-09-29 — Public website portfolio
+
+### Added
+
+- Added a dedicated `/websites/` portfolio page for public sites designed and supported by Just Needs Done.
+- Added a compact three-project website showcase to the Home page.
+- Added Websites links to the shared header and footer navigation.
+- Added public identity artwork for Whatnots & More, LBA Event Weekend, and Huck’s Karing for Kids.
+
+### Content and safeguards
+
+- Listed only confirmed public projects and linked each card directly to its live website.
+- Kept private previews, administrative tools, unfinished sites, and hosting details out of the public directory.
+- Preserved the existing JND logo, Astro architecture, business facts, contact destinations, and approved visual system.
+
 ## 2026-09-05 — Privacy-friendly analytics
 
 ### Added

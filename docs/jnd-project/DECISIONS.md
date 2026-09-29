@@ -2,6 +2,13 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-09-29 — Present hosted websites as a curated public portfolio
+
+- Decision: Use `/websites/` plus a compact Home-page preview to showcase confirmed public websites designed and supported by Just Needs Done.
+- Decision: Maintain the listings explicitly in `src/data/site.ts`; do not automatically expose every subdomain or hosting record.
+- Reason: A curated list promotes website work while preventing private, unfinished, administrative, or temporary sites from appearing publicly.
+- Initial public projects: Whatnots & More, LBA Event Weekend, and Huck’s Karing for Kids.
+
 ## 2026-09-05 — Include privacy-friendly analytics
 
 - Decision: Measure page views, approximate sessions, referral hostnames, device categories, campaign parameters, and link/contact clicks without changing the visible design or storing direct contact information, full referrer URLs, or IP addresses.
