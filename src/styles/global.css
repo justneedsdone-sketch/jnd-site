@@ -183,7 +183,7 @@ footer > p { color: #8ea4c7; font-size: .68rem; grid-column: 1 / -1; margin: 0; 
 .home-websites::before { background: linear-gradient(90deg,var(--royal),var(--red) 50%,var(--royal)); content: ""; height: 5px; left: 0; position: absolute; right: 0; top: 0; }
 .home-websites .section-heading h2 { color: white; }
 .home-websites .section-heading > p:last-child { color: #c1d0e8; }
-.website-preview-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3,minmax(0,1fr)); margin: 0 auto; max-width: 1200px; }
+.website-preview-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2,minmax(0,1fr)); margin: 0 auto; max-width: 1200px; }
 .website-preview { background: white; border: 1px solid rgba(255,255,255,.18); border-radius: .85rem; color: var(--ink); overflow: hidden; padding-bottom: 1.2rem; }
 .website-preview-art { align-items: center; display: flex; height: 190px; justify-content: center; padding: 1.8rem; }
 .website-preview-art img { height: 100%; object-fit: contain; width: 100%; }
@@ -193,6 +193,7 @@ footer > p { color: #8ea4c7; font-size: .68rem; grid-column: 1 / -1; margin: 0; 
 .website-preview > strong { color: var(--red); font-size: .82rem; margin-top: .75rem; }
 .website-card-wam { background: linear-gradient(145deg,#fff0f6,#f8c8da); }
 .website-card-lba { background: linear-gradient(145deg,#f8f1db,#d5bd83); }
+.website-card-ghouls { background: #241c31; }
 .website-card-karing { background: linear-gradient(145deg,#f1f8fc,#c8e5ee); }
 .home-websites .center-action { margin-top: 2rem; }
 .home-cta,.simple-cta { background: #fff; padding: clamp(4rem,7vw,6rem) 1.25rem; text-align: center; }

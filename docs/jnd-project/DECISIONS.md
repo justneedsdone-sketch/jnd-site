@@ -2,6 +2,11 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-10-01 — Include the public Ghouls Night Out site
+
+- Decision: Add Ghouls Night Out to the existing curated website portfolio and shared Home showcase at the owner's request.
+- Preserve all existing projects and reuse the published event artwork; expose only `https://ghoulsnight.justneedsdone.com/`, with no administrative or private links.
+
 ## 2026-09-29 — Present hosted websites as a curated public portfolio
 
 - Decision: Use `/websites/` plus a compact Home-page preview to showcase confirmed public websites designed and supported by Just Needs Done.

@@ -32,6 +32,15 @@ export const websites = [
     url: "https://karingforkids.justneedsdone.com",
     theme: "website-card-karing",
   },
+  {
+    name: "Ghouls Night Out",
+    type: "Community event website",
+    description: "A guide to a spooky evening in downtown LaSalle, with an interactive map, participating businesses, event details and shopping passport information.",
+    image: "/assets/websites/ghouls-night-out.webp",
+    alt: "Ghouls Night Out storybook illustration of a moonlit downtown shopping evening",
+    url: "https://ghoulsnight.justneedsdone.com/",
+    theme: "website-card-ghouls",
+  },
 ] as const;
 
 export const gallery = [

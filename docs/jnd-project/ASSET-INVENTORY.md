@@ -35,6 +35,8 @@ All six files below are 960×480 JPEGs inherited from the Astro starter. They ar
 
 ### Website portfolio identity artwork
 
+- `public/assets/websites/ghouls-night-out.webp` — unchanged public storybook artwork from `https://ghoulsnight.justneedsdone.com/assets/ghouls-evening.webp`, added October 1, 2026.
+
 - `public/assets/websites/whatnots-and-more.webp` — public Whatnots & More Vendor Mall identity artwork.
 - `public/assets/websites/lba-events.webp` — public La Salle Business Association identity artwork.
 - `public/assets/websites/karing-for-kids.webp` — public Huck’s Karing for Kids identity artwork.

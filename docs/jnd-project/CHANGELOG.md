@@ -2,6 +2,12 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-10-01 — Add Ghouls Night Out to website portfolio
+
+- Added the public Ghouls Night Out website to the shared portfolio collection, appearing on Home and `/websites/`.
+- Reused the event site's published storybook artwork without alteration and linked only to its public homepage.
+- Balanced the four-project desktop Home showcase into two columns; preserved mobile layout and existing listings.
+
 ## 2026-09-29 — Public website portfolio
 
 ### Added
