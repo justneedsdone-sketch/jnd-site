@@ -2,6 +2,12 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-10-30 — Link the public Frosty map from Home
+
+- Decision: Add the owner-requested Frosty on First promotion after the primary JND hero without changing the existing website portfolio or business content.
+- Link only to `https://frostymap.justneedsdone.com/map`; keep administrative routes and private previews out of the promotion.
+- Display the published event artwork directly from its existing public event-site URL, preserve its proportions, and identify the Market section as still being finalized.
+
 ## 2026-10-01 — Include the public Ghouls Night Out site
 
 - Decision: Add Ghouls Night Out to the existing curated website portfolio and shared Home showcase at the owner's request.

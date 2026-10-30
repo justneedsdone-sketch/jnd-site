@@ -2,6 +2,12 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-10-30 — Promote the Frosty on First map
+
+- Added a compact, responsive homepage promotion immediately after the main JND hero, linking directly to the public Frosty map.
+- Reused the event site's published City of La Salle artwork unchanged and uncropped, with an accessible text equivalent and a note that the Market section is still being finalized.
+- Preserved existing content, contact links, portfolio entries, branding, analytics, and deployment configuration.
+
 ## 2026-10-01 — Add Ghouls Night Out to website portfolio
 
 - Added the public Ghouls Night Out website to the shared portfolio collection, appearing on Home and `/websites/`.
