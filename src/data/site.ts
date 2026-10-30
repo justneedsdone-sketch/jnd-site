@@ -7,6 +7,15 @@ export const services = [
 // Curated public directory, newest-created sites first. Preserve this order on Home and /websites/.
 export const websites = [
   {
+    name: "Small Business Saturday",
+    type: "Local shopping guide",
+    description: "A Small Business Saturday shopping guide for La Salle and Peru, with an interactive map, participating shop profiles and visit-planning information.",
+    image: "/assets/websites/small-business-saturday.png",
+    alt: "Shop Small circular mark used by the La Salle Small Business Saturday guide",
+    url: "https://smallbizsaturday.justneedsdone.com/",
+    theme: "website-card-sbs",
+  },
+  {
     name: "Frosty on First",
     type: "Community event map",
     description: "An interactive guide to Frosty on First in downtown La Salle. Explore the event map and plan your visit. The Market section is still being finalized.",

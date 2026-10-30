@@ -2,6 +2,13 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-10-30 — Include the public Small Business Saturday guide
+
+- Add the owner-requested Small Business Saturday project at the top of the existing shared directory; preserve the newest-first pattern and all previous projects.
+- Link to `https://smallbizsaturday.justneedsdone.com/` only after its public custom domain is verified. Keep administrative and signup-management routes out of the directory.
+- Use the guide's published, user-provided Shop Small mark unchanged and proportionally contained. Do not imply third-party sponsorship or add unverified event details.
+- Keep the directory placement on Home and `/websites/`; do not add a separate promotion banner.
+
 ## 2026-10-30 — Use the website directory, newest first
 
 - Owner-approved correction supersedes “Link the public Frosty map from Home” below: remove the standalone hero-adjacent promotion and list Frosty in the existing curated directory instead.

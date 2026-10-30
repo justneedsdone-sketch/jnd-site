@@ -2,6 +2,12 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-10-30 — Add Small Business Saturday to the website directory
+
+- Added the Small Business Saturday shopping guide as the newest project in the shared directory, first on `/websites/` and in the existing Home website showcase.
+- Reused the guide's user-provided Shop Small mark unchanged, with a public custom-domain link and a brief description of its map, shop profiles and visit-planning information.
+- Preserved all five existing project records and their order, and retained the earlier correction: no standalone Home banner.
+
 ## 2026-10-30 — Move Frosty into the website directory
 
 - Corrected the placement at the owner's request: removed the new standalone Home banner and added Frosty on First to the existing shared website directory.

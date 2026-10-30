@@ -191,6 +191,9 @@ footer > p { color: #8ea4c7; font-size: .68rem; grid-column: 1 / -1; margin: 0; 
 .website-preview > span { color: var(--royal); font-size: .66rem; font-weight: 900; letter-spacing: .11em; margin-top: 1rem; text-transform: uppercase; }
 .website-preview h3 { color: var(--navy); font-size: 1.55rem; margin-top: .25rem; }
 .website-preview > strong { color: var(--red); font-size: .82rem; margin-top: .75rem; }
+.website-card-sbs { background: #f5efdf; }
+.website-card-art.website-card-sbs { padding-bottom: 4rem; }
+.website-card-art.website-card-sbs img { height: auto; }
 .website-card-frosty { background: #f2f7ff; }
 .website-card-wam { background: linear-gradient(145deg,#fff0f6,#f8c8da); }
 .website-card-lba { background: linear-gradient(145deg,#f8f1db,#d5bd83); }
