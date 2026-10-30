@@ -81,20 +81,6 @@ nav a { padding: .75rem .15rem; }
   width: 100%;
 }
 .hero-wave { border-radius: 50%; pointer-events: none; position: absolute; transform: rotate(-10deg); }
-.frosty-promo { background: #f2f7ff; border-bottom: 1px solid #d8e1f0; padding: clamp(1.5rem,4vw,3rem) 1.25rem; }
-.frosty-promo-inner { align-items: center; display: grid; gap: clamp(1.5rem,4vw,3rem); grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); margin: 0 auto; max-width: 1100px; }
-.frosty-promo-art { border-radius: .45rem; height: auto; width: 100%; }
-.frosty-promo-copy { min-width: 0; }
-.frosty-promo-copy .eyebrow { margin-bottom: .65rem; }
-.frosty-promo h2 { color: var(--navy); font-size: clamp(1.8rem,3vw,2.5rem); line-height: 1.1; }
-.frosty-promo-copy > p:not(.eyebrow) { color: #304564; line-height: 1.6; margin: .85rem 0; }
-.frosty-promo-copy .frosty-promo-note { font-size: .88rem; }
-.frosty-promo .button { margin-top: .45rem; }
-.frosty-promo .button:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
-@media (max-width: 720px) {
-  .frosty-promo-inner { grid-template-columns: minmax(0, 1fr); max-width: 540px; }
-  .frosty-promo .button { width: 100%; }
-}
 .hero-wave-one { border: 16px solid rgba(222,12,16,.10); height: 260px; left: -95px; top: 70px; width: 720px; }
 .hero-wave-two { border: 28px solid rgba(4,82,172,.10); bottom: -155px; height: 290px; right: -80px; width: 780px; }
 .hero-copy { align-self: center; max-width: 710px; position: relative; z-index: 2; }
@@ -205,6 +191,7 @@ footer > p { color: #8ea4c7; font-size: .68rem; grid-column: 1 / -1; margin: 0; 
 .website-preview > span { color: var(--royal); font-size: .66rem; font-weight: 900; letter-spacing: .11em; margin-top: 1rem; text-transform: uppercase; }
 .website-preview h3 { color: var(--navy); font-size: 1.55rem; margin-top: .25rem; }
 .website-preview > strong { color: var(--red); font-size: .82rem; margin-top: .75rem; }
+.website-card-frosty { background: #f2f7ff; }
 .website-card-wam { background: linear-gradient(145deg,#fff0f6,#f8c8da); }
 .website-card-lba { background: linear-gradient(145deg,#f8f1db,#d5bd83); }
 .website-card-ghouls { background: #241c31; }

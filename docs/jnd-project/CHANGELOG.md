@@ -2,6 +2,13 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-10-30 — Move Frosty into the website directory
+
+- Corrected the placement at the owner's request: removed the new standalone Home banner and added Frosty on First to the existing shared website directory.
+- Display the curated projects newest first on `/websites/` and in the existing Home website showcase: Frosty, Ghouls, Huck’s Karing for Kids, Whatnots & More, then LBA Event Weekend.
+- Preserved all existing project records and destinations; reused the published Frosty artwork and direct public map URL, with the Market caveat in its directory description.
+- Kept all unrelated homepage content, branding, contact links, analytics, and hosting configuration unchanged.
+
 ## 2026-10-30 — Promote the Frosty on First map
 
 - Added a compact, responsive homepage promotion immediately after the main JND hero, linking directly to the public Frosty map.

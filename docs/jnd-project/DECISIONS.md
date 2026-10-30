@@ -2,6 +2,13 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-10-30 — Use the website directory, newest first
+
+- Owner-approved correction supersedes “Link the public Frosty map from Home” below: remove the standalone hero-adjacent promotion and list Frosty in the existing curated directory instead.
+- Keep the shared `websites` collection ordered newest-created first for both `/websites/` and its existing Home showcase. Creation chronology was verified against the existing Sites records; no launch dates are invented or displayed.
+- Current order: Frosty on First, Ghouls Night Out, Huck’s Karing for Kids, Whatnots & More, LBA Event Weekend. Preserve existing entries and public destinations when adding later projects.
+- Reuse Frosty's public artwork unchanged and link only to `https://frostymap.justneedsdone.com/map`; keep the Market-in-progress caveat with its directory description.
+
 ## 2026-10-30 — Link the public Frosty map from Home
 
 - Decision: Add the owner-requested Frosty on First promotion after the primary JND hero without changing the existing website portfolio or business content.

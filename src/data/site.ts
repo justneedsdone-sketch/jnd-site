@@ -4,7 +4,35 @@ export const services = [
   { title: "Custom & Personal", kicker: "Made for your moment", image: "/assets/custom-apparel.jpg", alt: "Custom printed apparel produced by Just Needs Done", items: ["Apparel and team gear", "Tumblers, mugs and gifts", "Keepsakes and custom products"] },
 ];
 
+// Curated public directory, newest-created sites first. Preserve this order on Home and /websites/.
 export const websites = [
+  {
+    name: "Frosty on First",
+    type: "Community event map",
+    description: "An interactive guide to Frosty on First in downtown La Salle. Explore the event map and plan your visit. The Market section is still being finalized.",
+    image: "https://frostymap.justneedsdone.com/assets/city-frosty-banner-2026.png",
+    alt: "City of La Salle’s Frosty on First winter event artwork",
+    url: "https://frostymap.justneedsdone.com/map",
+    theme: "website-card-frosty",
+  },
+  {
+    name: "Ghouls Night Out",
+    type: "Community event website",
+    description: "A guide to a spooky evening in downtown LaSalle, with an interactive map, participating businesses, event details and shopping passport information.",
+    image: "/assets/websites/ghouls-night-out.webp",
+    alt: "Ghouls Night Out storybook illustration of a moonlit downtown shopping evening",
+    url: "https://ghoulsnight.justneedsdone.com/",
+    theme: "website-card-ghouls",
+  },
+  {
+    name: "Huck’s Karing for Kids",
+    type: "Fundraising event website",
+    description: "A clear event hub for families, volunteers and supporters to find activities, sponsor information, location details and updates.",
+    image: "/assets/websites/karing-for-kids.webp",
+    alt: "Karing for Kids logo",
+    url: "https://karingforkids.justneedsdone.com",
+    theme: "website-card-karing",
+  },
   {
     name: "Whatnots & More",
     type: "Local business website",
@@ -22,24 +50,6 @@ export const websites = [
     alt: "La Salle Business Association logo",
     url: "https://lbaevents.justneedsdone.com",
     theme: "website-card-lba",
-  },
-  {
-    name: "Huck’s Karing for Kids",
-    type: "Fundraising event website",
-    description: "A clear event hub for families, volunteers and supporters to find activities, sponsor information, location details and updates.",
-    image: "/assets/websites/karing-for-kids.webp",
-    alt: "Karing for Kids logo",
-    url: "https://karingforkids.justneedsdone.com",
-    theme: "website-card-karing",
-  },
-  {
-    name: "Ghouls Night Out",
-    type: "Community event website",
-    description: "A guide to a spooky evening in downtown LaSalle, with an interactive map, participating businesses, event details and shopping passport information.",
-    image: "/assets/websites/ghouls-night-out.webp",
-    alt: "Ghouls Night Out storybook illustration of a moonlit downtown shopping evening",
-    url: "https://ghoulsnight.justneedsdone.com/",
-    theme: "website-card-ghouls",
   },
 ] as const;
 
