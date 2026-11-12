@@ -48,7 +48,7 @@ export const websites = [
     description: "A public home for the LaSalle vendor mall, with store information, vendor discovery, events and visitor details.",
     image: "/assets/websites/whatnots-and-more.webp",
     alt: "Whatnots and More Vendor Mall logo",
-    url: "https://whatnots.justneedsdone.com",
+    url: "https://whatnotsandmore.com",
     theme: "website-card-wam",
   },
   {

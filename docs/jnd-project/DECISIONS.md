@@ -2,6 +2,11 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-11-12 — Use Whatnots and More’s dedicated domain
+
+- At the owner's request, use https://whatnotsandmore.com for the Whatnots and More public directory entry, replacing the previous justneedsdone.com subdomain.
+- The requested 25+ vendor count belongs on the Whatnots and More site; the JND listing description remains unchanged.
+
 ## 2026-10-30 — Include the public Small Business Saturday guide
 
 - Add the owner-requested Small Business Saturday project at the top of the existing shared directory; preserve the newest-first pattern and all previous projects.

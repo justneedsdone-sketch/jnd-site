@@ -2,6 +2,11 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-11-12 — Update Whatnots and More domain
+
+- Updated the shared website directory link to https://whatnotsandmore.com after its domain and SSL activation were confirmed.
+- Preserved the existing listing description, artwork, and ordering.
+
 ## 2026-10-30 — Add Small Business Saturday to the website directory
 
 - Added the Small Business Saturday shopping guide as the newest project in the shared directory, first on `/websites/` and in the existing Home website showcase.
