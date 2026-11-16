@@ -2,6 +2,12 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-11-16 — Include the public Wagoner Wash & Lighting site
+
+- At the owner’s request, list Wagoner first in the existing newest-first shared website directory.
+- Link only to `https://wagoner.justneedsdone.com/`; reuse the published business artwork proportionally without exposing private or administrative routes.
+- Preserve the existing six entries and their relative order.
+
 ## 2026-11-12 — Use Whatnots and More’s dedicated domain
 
 - At the owner's request, use https://whatnotsandmore.com for the Whatnots and More public directory entry, replacing the previous justneedsdone.com subdomain.

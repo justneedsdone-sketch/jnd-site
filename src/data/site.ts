@@ -7,6 +7,15 @@ export const services = [
 // Curated public directory, newest-created sites first. Preserve this order on Home and /websites/.
 export const websites = [
   {
+    name: "Wagoner Wash & Lighting",
+    type: "Local business website",
+    description: "A seasonal showcase for holiday lighting and exterior cleaning, with project photos and easy ways to contact the business.",
+    image: "https://wagoner.justneedsdone.com/assets/wagoner-reference-flyer.jpg",
+    alt: "Wagoner Wash and Lighting holiday business artwork",
+    url: "https://wagoner.justneedsdone.com/",
+    theme: "website-card-wagoner",
+  },
+  {
     name: "Small Business Saturday",
     type: "Local shopping guide",
     description: "A Small Business Saturday shopping guide for La Salle and Peru, with an interactive map, participating shop profiles and visit-planning information.",

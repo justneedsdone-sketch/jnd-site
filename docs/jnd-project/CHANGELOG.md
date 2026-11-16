@@ -2,6 +2,11 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-11-16 — Add Wagoner Wash & Lighting to the website directory
+
+- Added Wagoner as the newest listing in the shared Home and `/websites/` directory, linking to its verified public custom domain.
+- Reused its published business artwork unchanged and preserved all prior listings, layout, content and hosting settings.
+
 ## 2026-11-12 — Update Whatnots and More domain
 
 - Updated the shared website directory link to https://whatnotsandmore.com after its domain and SSL activation were confirmed.
