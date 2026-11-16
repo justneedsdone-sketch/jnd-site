@@ -2,6 +2,14 @@
 
 Meaningful project changes should be recorded here in reverse chronological order. Do not list generated build output or inconsequential formatting-only edits.
 
+## 2026-11-16 — Randomized website directory
+
+- Randomized the directory display order per browsing session on Home and Websites, preserving all seven entries and links. Removed the obsolete newest-first claim.
+
+## 2026-11-16 — Wagoner logo-only correction
+
+- Corrected the Wagoner card to display only the original business logo, matching the crop used on its live site; removed the visible gift-certificate promotion from both Home and Websites cards.
+
 ## 2026-11-16 — Add Wagoner Wash & Lighting to the website directory
 
 - Added Wagoner as the newest listing in the shared Home and `/websites/` directory, linking to its verified public custom domain.

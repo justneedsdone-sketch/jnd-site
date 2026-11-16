@@ -4,14 +4,14 @@ export const services = [
   { title: "Custom & Personal", kicker: "Made for your moment", image: "/assets/custom-apparel.jpg", alt: "Custom printed apparel produced by Just Needs Done", items: ["Apparel and team gear", "Tumblers, mugs and gifts", "Keepsakes and custom products"] },
 ];
 
-// Curated public directory, newest-created sites first. Preserve this order on Home and /websites/.
+// Curated public directory. Display order is shuffled per browsing session on Home and /websites/.
 export const websites = [
   {
     name: "Wagoner Wash & Lighting",
     type: "Local business website",
     description: "A seasonal showcase for holiday lighting and exterior cleaning, with project photos and easy ways to contact the business.",
     image: "https://wagoner.justneedsdone.com/assets/wagoner-reference-flyer.jpg",
-    alt: "Wagoner Wash and Lighting holiday business artwork",
+    alt: "Wagoner Wash and Lighting logo",
     url: "https://wagoner.justneedsdone.com/",
     theme: "website-card-wagoner",
   },

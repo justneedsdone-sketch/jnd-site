@@ -317,3 +317,9 @@ footer > p { color: #8ea4c7; font-size: .68rem; grid-column: 1 / -1; margin: 0; 
   html { scroll-behavior: auto; }
   .service-image img { transition: none; }
 }
+
+/* The supplied Wagoner artwork includes a certificate. Show only its original logo,
+   using the same upper-left crop as the business website. */
+.website-card-wagoner { background: #f1eee6; }
+.wagoner-logo-crop { width: 100%; max-width: 420px; aspect-ratio: 100 / 45; position: relative; overflow: hidden; flex-shrink: 0; }
+.website-card-wagoner .wagoner-logo-crop img { position: absolute; top: 0; left: 0; width: 250%; height: auto; max-width: none; max-height: none; object-fit: initial; transform: none; }

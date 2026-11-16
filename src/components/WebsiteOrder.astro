@@ -1,0 +1,21 @@
+<!-- Shuffle the public portfolio once per browsing session, consistently on both pages. -->
+<script is:inline>
+(() => {
+  let seed;
+  try {
+    seed = sessionStorage.getItem('jnd-portfolio-order');
+    if (!seed) { seed = String(Math.random()); sessionStorage.setItem('jnd-portfolio-order', seed); }
+  } catch { seed = String(Math.random()); }
+  const rank = (url) => {
+    let value = 2166136261;
+    for (const c of seed + url) value = Math.imul(value ^ c.charCodeAt(0), 16777619);
+    return value >>> 0;
+  };
+  document.querySelectorAll('.website-grid, .website-preview-grid').forEach(grid => {
+    Array.from(grid.children).sort((a, b) => {
+      const url = el => el.getAttribute('href') || el.querySelector('a').getAttribute('href');
+      return rank(url(a)) - rank(url(b));
+    }).forEach(card => grid.appendChild(card));
+  });
+})();
+</script>

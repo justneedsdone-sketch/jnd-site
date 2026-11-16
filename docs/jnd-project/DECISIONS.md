@@ -2,6 +2,14 @@
 
 Record durable technical, design, content, and process decisions here. Never silently reverse a documented decision. If an owner-approved decision changes, add a new dated entry that names the superseded decision and explains why.
 
+## 2026-11-16 — Randomized website directory
+
+- Owner-requested random directory order supersedes newest-first display. Shuffle all seven cards once per browsing session, retaining that order across Home and Websites navigation. Static/no-script fallback keeps all entries accessible.
+
+## 2026-11-16 — Wagoner logo-only correction
+
+- Owner correction: show only Wagoner’s existing logo in its directory cards, not the complete source certificate. Use the existing business-site crop without recreating or recoloring the artwork.
+
 ## 2026-11-16 — Include the public Wagoner Wash & Lighting site
 
 - At the owner’s request, list Wagoner first in the existing newest-first shared website directory.

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import WebsiteOrder from "../components/WebsiteOrder.astro";
 import { websites } from "../data/site";
 ---
 
@@ -14,13 +15,13 @@ import { websites } from "../data/site";
 		<div class="section-heading website-heading">
 			<p class="eyebrow">LIVE PROJECTS</p>
 			<h2 id="website-portfolio-heading">Explore our website work.</h2>
-			<p>Every site below is public and currently supported by Just Needs Done. Newest websites are listed first. Select a project to open the live website.</p>
+			<p>Every site below is public and currently supported by Just Needs Done. Select a project to open the live website.</p>
 		</div>
 		<div class="website-grid">
 			{websites.map((site) => (
 				<article class="website-card">
 					<a class={`website-card-art ${site.theme}`} href={site.url} target="_blank" rel="noreferrer" aria-label={`Visit ${site.name} website`}>
-						<img src={site.image} alt={site.alt} />
+						{site.theme === "website-card-wagoner" ? <div class="wagoner-logo-crop"><img src={site.image} alt={site.alt} /></div> : <img src={site.image} alt={site.alt} />}
 						<span>View live website <span aria-hidden="true">↗</span></span>
 					</a>
 					<div class="website-card-copy">
@@ -42,4 +43,5 @@ import { websites } from "../data/site";
 		</div>
 		<a class="button button-red" href="mailto:Just.Needs.Done@gmail.com?subject=Website%20design%20quote%20request">Ask about a website</a>
 	</section>
+<WebsiteOrder />
 </Layout>
